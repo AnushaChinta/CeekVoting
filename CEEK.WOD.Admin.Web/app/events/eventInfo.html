@@ -1,0 +1,188 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+        
+    }
+
+    .input {
+        border-bottom: 2px solid #0e3de8;
+       padding-top: 0.75rem;
+    }
+
+    .img-artist {
+        float: left;
+        height: 39vh;
+        margin-top: 5%;
+    }
+
+    .con1{
+        margin-left:15%;padding-left:12%;
+    }
+    .con2{
+       margin-left:15%;padding-left:12%
+    }
+     .media_form1{
+          padding-left:35%;
+      }
+     .media_popup{
+         padding-left:35%;cursor:pointer;
+     }
+
+     .media_content{
+         max-width:100%;min-width:48%;margin-top:8%;padding-bottom:0px;
+     }
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+       .img-artist {
+        float: none;
+        height: 39vh;
+        margin-top: 5%;
+       }
+       
+        .con1{
+        margin-left:0%;padding-left:0%;
+       }
+         .con2{
+        margin-left:0%;padding-left:10%;
+       }
+      .media_form1{
+          padding-left:0%;
+      }
+       .media_popup{
+         padding-left:0%;cursor:pointer;
+     }
+       .media_content{
+         max-width:100%;min-width:48%;margin-top:36%;padding-bottom:0px;
+     }
+    }
+</style>
+
+
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">
+    {{ !isEdit? 'Add Event' : 'Edit Event' }}
+</p>
+<hr style="border-bottom: 1px solid;width:38%;" />
+
+<div class="container con1">
+  
+    <form class="subscribe-news__form" id="form1" name="form" novalidate>
+        <div class="modal-content artist-modal img-artist">        
+            <img src="{{model.fullimageurl}}" alt="{{model.imageurl}}" class="aspectinfo img-fluid"> 
+        </div>
+    </form>
+</div>
+
+<div class="container con2">
+    <form class="subscribe-news__form media_form1" id="form1" name="form" novalidate>      
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem; padding-top: 0.75rem;">
+                <input type="text" class="transp-input input" placeholder="Event Name" id="name" name="name" ng-model="model.event_name" maxlength="25" ng-pattern="" required />
+                <span style="color:red" ng-show="form.name.$touched && form.name.$invalid || submitted&&form.name.$error.required"><b>EventName required</b></span>
+                <span style="color:red" ng-show="form.name.$error.pattern"><b>Invalid Format</b></span>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem; padding-top: 0.75rem;">
+                <input type="text" class="transp-input input" placeholder="Event Url" id="price" name="price" ng-model="model.event_url" maxlength="20" />
+                <!--<span style="color:red" ng-show="form.lname.$error.pattern"><b>Please enter only alphabets</b></span>-->
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem; padding-top: 0.75rem;">
+                <textarea id="desc" style="width:100%;border:solid 2px #5677ee" name="desc" rows="2" ng-model="model.event_description" required> </textarea>
+
+                <span style="color:red" ng-show="form.desc.$touched && form.desc.$invalid || submitted&&form.desc.$error.required"><b>Description required</b></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 10.55rem; padding-top: 0.75rem;">
+                <input type="text" class="transp-input input" placeholder="Event StartDate"  ng-model="model.event_starttime" id="txtFrom" name="txtFrom"  maxlength="25" ng-pattern="" />
+              
+            </div>
+          
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 10.25rem; padding-top: 0.75rem;">
+                <input type="text" class="transp-input input" placeholder="Event EndDate"  ng-model="model.event_endtime" id="txtTo" name="txtTo"  maxlength="25" ng-pattern="" />
+               
+            </div>
+            </div>
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem; padding-top: 0.75rem;">
+                <input type="text" class="transp-input input" placeholder="Status" id="status" name="status" ng-model="model.status" maxlength="25" ng-pattern="/^[a-zA-Z\s]*$/" />
+                <span style="color:red" ng-show="form.status.$error.pattern"><b>Please enter only alphabets</b></span>
+            </div>
+        </div>
+            <div class="row">
+
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem; padding-top: 0.75rem;">
+                    <div class="input-group mb-3" style="border: solid 2px #5677ee ">
+                        <!--<div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>-->
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo" file-model="package.file" aria-describedby="inputGroupFileAddon01" ng-model="model.event_logo" accept=".png, .jpg, .jpeg" multiple>
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="background:none;color:red;margin-left:3%;font-size:3.25vh;">
+                <b>{{message}}</b>
+            </div>
+            <div class="row" style="margin-bottom: 5%;">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12 btn-group">
+                    <a value="Cancel" id="cancel" data-toggle="modal" data-target=".modal-artist" ng-show="show1" style="background-color:red;cursor:pointer; border: none;max-width: 7.5rem;height: 41px;padding-left: 7px;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6">Delete</span>
+                    </a>&nbsp;
+                    <a value="Cancel" id="cancel" ng-click="cancel();" style="max-width: 7.5rem;margin: 0px 8px 0px;cursor:pointer;height: 41px;padding-left: 7px;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6" style="color:blue">Cancel</span>
+                    </a>&nbsp;
+                    <a ng-click="submitted=true;save(form);"  id="create" style="cursor:pointer;max-width: 7.5rem;height: 41px;padding-left: 7px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Save</span>
+                    </a>
+                </div>
+            </div>
+</form>
+
+
+</div>
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="false">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+        <div class="modal-content artist-modal media_content">
+
+            <div class="container" style="">
+
+                <h2 class="get-your-vr__header color-blue" style="margin-top:5%;margin-left: 4%;font-size: 2rem;">Are Your Sure You Want to Delete Event?</h2>
+                <form class="subscribe-news__form media_popup" id="form_setting" name="form_setting" novalidate>
+
+
+
+                    <div class="row" style="margin-bottom: 10%;">
+                        <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12 btn-group">
+
+                            <a value="Cancel" id="cancel" ng-click="closepopup();" data-dismiss="modal" style="cursor:pointer;height: 41px;padding-left: 0px;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long">
+                                <span class="btn-w-icon__text col-lg-3 col-md-6" style="color:blue">Cancel</span>
+                            </a>&nbsp;
+                            <a ng-click="delete();" id="verify" style="cursor:pointer;height: 41px;padding-left: 0px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                                <span class="btn-w-icon__text col-lg-4 col-md-6">&nbsp;Delete</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

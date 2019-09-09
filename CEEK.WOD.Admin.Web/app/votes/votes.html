@@ -1,0 +1,39 @@
+﻿
+<div class="content-2">
+    <div class="titulo">
+        ARTIST LIST
+    </div>
+    <div class="list" id="list">
+        <p class="txt-ranking">RANK</p>
+        <div class="box-row" ng-repeat="x in model.artistList">
+            <div class="box-one"><span>{{x.artistRanking}}</span></div>
+            <div class="box-two"><a href="" onclick="modal_artist()"><img src="{{x.artistImageUrl}}" /></a></div>
+            <div class="box-three">
+                <img src="img/unnamed.png">
+                <div style="float: left;">
+                    <div class="texto-encima">{{x.artistName}}</div>
+                    <div class="container-progressbar">
+                        <progress value="{{x.artistRelativeVotes}}" max="100"></progress>
+                    </div>
+                </div>
+                <div style="float: right;">
+                    <div class="container-btn" style="top:2vh;">
+                        <img src="img/heart.png" style="width: 1vw;height: 1.4vh;"><span style="color: #00E1FF; font-size:2vh">&nbsp;{{x.artistVotes}} k</span><br>
+                        <input type="button" name="" value="VOTE" id="alternar-panel1" ng-mouseover="voteHoverIn(x.artistRanking)" ng-mouseleave="voteHoverOut(x.artistRanking)" class="buttom-azul" style="margin-top: 2px; position: relative; z-index: 20;">
+                        <nav id="panel1" ng-show="showVotePopOverId == x.artistRanking"  ng-mouseover="voteHoverIn(x.artistRanking)" ng-mouseleave="voteHoverOut(x.artistRanking)" class="panel-vote" style="position: relative; z-index: 10;">
+
+                            <div class="quantity-p">
+                                <input type="number" min="1" max="100" step="10" value="1">&nbsp;<img src="img/heart.png" style="width: 1.4vw;height: 2vh;">
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="down" onclick="move_up()">
+        <a href="" id="down"><img src="img/down.png" alt=""></a>
+    </div>
+</div>

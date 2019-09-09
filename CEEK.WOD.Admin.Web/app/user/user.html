@@ -1,0 +1,49 @@
+﻿<style>
+    .con_1 {
+        margin-top: -16px;
+        margin-left: 10%;
+        font-family: Segoe UI,sans-serif;
+    }
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .con_1 {
+            overflow-x: scroll;
+        margin-top: -16px;
+        margin-left: 0%;
+        font-family: Segoe UI,sans-serif;
+       }
+    }
+</style>
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">Admin List</p>
+    <hr style="border-bottom: 1px solid;" />
+
+    <div class="container con_1">
+        <table class="table table-hover" style="width:82%;">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Ceeker Name</th>
+
+
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in userList">
+                <tr>
+                    <td>{{x.emailid}}</td>
+                    <td>{{x.firstname}}</td>
+                    <td>
+                        <a ng-click="Edit(x);" style="color:white;margin-left:10%;" class="btn btn-ceek"><b>Edit</b></a>
+                        <a ng-click="changepassword(x);" style="color:white;width: auto;" class="btn btn-ceek" ng-show="show"><b>Change Password</b></a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <div style="margin-left:36%;font-size:3vh;background:none;color:red;">
+            <b>{{message}}</b>
+        </div>
+
+    </div>
+</div>
+

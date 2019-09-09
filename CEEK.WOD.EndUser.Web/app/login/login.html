@@ -1,0 +1,76 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid #0e3de8;
+    }
+     a:hover{
+        color:white;
+        text-decoration:none;
+    }
+</style>
+
+<div class="container logincss" style="margin-top:10%">
+
+    <h2 class="get-your-vr__header color-blue logincss9" style="margin-left: 46%;">SIGN IN</h2>
+    <form class="subscribe-news__form logincss1" id="form1" name="form" novalidate style="padding-left:35%">
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input id="username" type="text" class="transp-input input" ng-click="MSG();" name="username" placeholder="Ceeker ID or Email" ng-model="username" maxlength="30" required>
+
+            </div>
+
+        </div>
+        <span style="color:red;" ng-show="submitted&&form.username.$error.required||form.username.$touched && form.username.$invalid"><b>Please enter username here</b></span>
+
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input id="password" type="password" class="transp-input input" ng-click="MSG();" placeholder="Password" ng-model="password" name="password" required>
+                <span style="color:red;" ng-show="submitted&&form.password.$error.required||form.password.$touched && form.password.$invalid"><b>Please enter password here</b></span>
+
+            </div>
+
+        </div>
+       
+        <div class="row">
+            <div class="col-md-4 logincss2"><p class="logincss3" style="margin-left: 6%;margin-top:5%;color: blue; align-content: center;"><b>Forgot Password?</b></p></div>
+            <div class="col-md-2 logincss4" style="margin-top: 1%;width:30%;margin-left: -3%;text-align: end;">
+                <span style="color:blue;cursor:pointer;" ng-click="reset();"><b><u>Reset</u></b></span>
+            </div>
+        </div>
+        <div  style="top:44vh;font-size:2.5vh;margin-left:10%;background:none;color:red;" ng-if="showError == true">
+            <b>Invalid Login Credentials</b>
+        </div>
+        <div class="row" style="padding-left:16%;">
+            <div class="input-group-append logincss13" style="margin-left:-5%;">
+                <a href="" ng-click="submitted=true;login(form)" id="login" style="width: 16vw;border: 2px solid #71bdff;" class="btn btn-ceek btn-w-icon_blue-gradient logincss5 "><img src="../img/icon.png" style="margin-right: 7px;" /><b>Login</b></a>
+            </div>
+            <!--div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                <a ng-click="submitted=true;login(form)" style="cursor:pointer;height:43px;" id="login" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                    <img class="get_more-w-icon__img" src="./img/icon.png" alt="icon lock"> <span class="btn-w-icon__text">&nbsp;login</span>
+                </a>
+            </div>-->
+        </div>
+        <div class="row" style="padding-left:17%; margin-top:1%;">
+            <span class="logincss8" style="color:blue;margin-left:10%;">Or</span>
+            <!--<div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12" style="margin-left: -14%;margin-top: 1%;">
+                <a ng-click="submitted=true;login(form)" style="cursor:pointer;height:40px;" id="login" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                    <img class="get_more-w-icon__img" src="./img/facebook-icon.png" alt="icon lock"> <span class="btn-w-icon__text">Connect with Facebook</span>
+                </a>
+            </div>-->
+            <div class="input-group-append logincss6" style="margin:5% -22.5%;">
+            <a href="" ng-click="fblogin();" style="width: 19vw;border: 2px solid #71bdff;" class="btn btn-ceek btn-w-icon_blue-gradient logincss7 "><img src="../img/facebook-icon.png" style="height:20px;margin-right:4px;" />Connect with Facebook</a>
+        </div>
+            <!--div class="col-md-3">
+                <span style="color:blue;margin-left:11%;"></span>
+            </div>
+            <div class="col-md-6">
+                <span style="color:blue;margin-left:11%;">Forgot Password</span>
+            </div>-->
+        </div>
+    </form>
+
+
+</div>

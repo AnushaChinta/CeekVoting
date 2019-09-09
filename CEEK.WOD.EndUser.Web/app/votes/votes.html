@@ -1,0 +1,163 @@
+﻿<style> 
+.artist{
+    width: 120px;
+    /*height:56px;*/
+    -webkit-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    -moz-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+}
+.text-artist{
+    line-height: 0;
+     top:0px;
+}
+
+a:hover{
+        color:white;
+        text-decoration:none;
+}
+@media screen and (max-width: 768px) {
+    .artist{
+        width: 90px;
+    }
+    .table td{
+        padding:0.75rem 0 0.75rem 0; 
+    }
+    .tdnum{
+        padding-left:0px;
+        padding-right:0px;  
+    }
+    .prog-bar{
+        width: 140px;
+    }
+}
+    @media screen and (max-width: 768px) {
+        .table td {
+            padding-right:2% !important;
+        }
+    }
+</style>
+<div class="container-fluid pl-0 pr-0 body-header">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;">VOTING</p>
+</div>
+<div class="container-fluid pl-0 pr-0 artist-banner">
+    <img ng-src="{{eventimg}}" class="artist-banner" alt="">
+</div>
+<div class="container" style="margin-top:12%;">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">{{event_name}}</p>
+    <p class="text-center font-weight-bold txt-normal">Ranking</p>
+    <div class="error2" style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    <div class="error" style="background:none;color:red;margin-left:37%;color:red;font-size:3.25vh;">
+        <b>{{message1}}</b>
+    </div>
+    <div class="table-responsive">
+        <table class="table" style="font-family: Segoe UI,sans-serif;">
+            <tr ng-repeat="x in artistList">
+                <td class="align-middle text-center font-weight-bold" style="width:10%"><!--<img src="img/Medal-1.png" width="60" alt="">-->{{x.artistrank}}</td>
+                <td class="align-middle" style="width:15%"><img ng-src="{{x.fullimageurl}}" class="artist" alt=""></td>
+                <td class="align-middle pl-2" style="width:45%">
+                    <p class="font-weight-bold mb-0 text-artist">{{x.artistName}}</p><br>
+                    <div class="progress prog-bar" style="font-size:3rem;">
+                        <progress value="{{x.artistvotesperc}}" role="progressbar" style="background-color:blue"  class="progress-bar bg-medal-3" max="100"></progress>
+                        <!--<div class="progress-bar bg-medal-3" role="progressbar" value="{{x.artistvotesperc}}" style="width: 95%" aria-valuenow="{{x.artistvotesperc}}" aria-valuemin="0" aria-valuemax="100"></div>-->
+                    </div>
+                </td>
+                <td class="align-middle" style="width:15%"><p class="font-weight-bold mb-0 votes">{{x.artistvotes}} Votes</p></td>
+                <td class="align-middle" style="width:15%"><a href="" ng-click="openArtistPopup(x);" class="btn btn-ceek" data-toggle="modal" data-target=".modal-artist"><img src="img/coin.png" style="width:16px"> Vote</a></td>
+            </tr>
+           
+        </table>
+    </div>
+</div>
+
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+        <div class="modal-content artist-modal" ng-show="showArtistPopUp" style="max-width:100%;min-width:50%;padding-bottom:0px;">
+
+            <form role="form" id="form" name="form" novalidate>
+                <div class="row close-modal" data-dismiss="modal">
+                    <div class="col-12 pr-0 pl-0"><img src="img/Close.png" class="close" alt="" style="width:32px;"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{popupImage.fullimageurl}}" class="aspectinfo img-fluid" alt="">
+                        <button class="w3-button w3-display-left w3-black" style="position: absolute;top: 40%;background-color: blue; border: none;" ng-show="popupImage.showImagePrev" ng-click="popupImage.ImagePrev()">&#10094;</button>
+                        <button class="w3-button w3-display-right w3-black" style="background-color: blue;border: none;position: absolute;top: 40%;right: 0%;" ng-show="popupImage.showImageNext" ng-click="popupImage.ImageNext()">&#10095;</button>
+
+                    </div>
+                    <div class="col-md-6">
+                        <!--<div class="row text-modal pl-2 pr-2 pb-2 mr-0 ml-0">-->
+                        <div class="row pl-2 pr-2 pb-2 mr-0 ml-0" style="margin-top:7%;">
+                            <div class="col-12 pl-0 pr-0">
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5">{{selectedArtist.artistname}}</p>
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5" style="font-size:0.85rem;word-break: break-word;">{{selectedArtist.artistdescription}}</p>
+                                <p class="text-black font-weight-bold h5">Number of votes</p>
+                                <div class="input-group mb-3">
+                                    <!--<input type="text" class="form-control" placeholder="1000" aria-describedby="basic-addon2">-->
+                                    <input type="text" aria-describedby="basic-addon2" min="1" max="1000" class="form-control" name="fname" id="fname" ng-model="selectedArtist.numberofvotes" ng-pattern="/^\d+$/" required>
+
+                                    <div class="input-group-append">
+                                        <a href="" ng-click="submitted=true;vote(form);" data-target=".modal-artist" class="btn btn-ceek">Vote</a>
+                                    </div>
+                                
+                                </div>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$touched && form.fname.$invalid || submitted&&form.fname.$error.required"><b>Enter atleast one vote</b></span>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$error.pattern"><b>Invalid Number</b></span>
+
+                            </div>
+                        </div>
+
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-6%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{message2}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-9%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{Vote_errorMessage1}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="top:-6%;position:relative">
+                            <div class="col-12"  style="padding-left:0px;padding-right:0px;"><p class="text-white text-center mb-0"><img src="img/coin.png" width="16" alt=""> {{ceekpoints}} Coins <a href="" class="" ng-click="cryptoshop();" data-dismiss="modal">&nbsp;Buy More</a></p></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="background:none;color:red;top:0%;position:relative;font-size:3vh;">
+                    <div class="row" style="margin-left:2%;"><b> {{Vote_errorMessage}}</b></div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="modal-content artist-modal" ng-show="showVoteThanksPopUp" style="max-width:100%;padding-bottom:2%;">
+
+            <div>
+                <!--<img class="img-ok" src="img/ok.png" style=" ">-->
+                <p class="color-ceek font-weight-bold" style="padding: 4%;margin-left: 14%">Thanks for your vote!</p>
+
+                <div class="row" style="margin-left:5%;">
+                    <div class="col-md-4">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="closeVoteThanksPopup()" data-dismiss="modal" class="btn btn-ceek">Vote Again</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="cryptoshop();" data-dismiss="modal" class="btn btn-ceek">Buy Ceek Token</a>
+                        </div>
+                    </div>
+                    <div class="col-md-10" style="margin-top: 2%;padding-right: 4px;">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="ranking();" data-dismiss="modal" class="btn btn-ceek">Rankings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

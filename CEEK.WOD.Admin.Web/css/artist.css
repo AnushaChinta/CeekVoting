@@ -1,0 +1,58 @@
+.artist-header{
+    background: url(../img/header.png) no-repeat center;
+    background-size: cover;
+    min-height: 50px;
+}
+.artist-banner{
+    background: url(../img/idol.png) no-repeat center;
+    background-size: cover;
+    height: 500px;
+    min-height: 400px;
+}
+.artist{
+    -webkit-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    -moz-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+}
+.text-artist{
+    position: relative;
+    top: -93px;;
+    background: -webkit-linear-gradient(transparent,#000000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent,#000000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent,#000000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent,#000000); /* Standard syntax */
+}
+.artist-modal{
+    width: 300px;
+    padding-bottom: 50px;
+    margin: auto;
+    -webkit-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    -moz-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+}
+.text-modal{
+    position: absolute;
+    bottom: 0px;
+    background: -webkit-linear-gradient(transparent,#000000,#000000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent,#000000,#000000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent,#000000,#000000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent,#000000,#000000); /* Standard syntax */
+}
+.bg-color-ceek{
+    position: absolute;
+    top: 300px;
+    width: 250px;
+    border-radius: 15px;
+    background: #2E37FE;
+}
+.bg-color-ceek a{
+    color: #71BDFF;
+    text-decoration: none;
+}
+.close-modal{
+    text-align: right;
+    position: absolute;
+    top: -50px;
+    right: -20px;
+    cursor: pointer;
+}

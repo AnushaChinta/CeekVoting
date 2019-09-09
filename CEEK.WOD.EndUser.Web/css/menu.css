@@ -1,0 +1,70 @@
+.navbar{
+    font-family: Titillium Web,sans-serif !important;
+    font-size: .94rem;
+   
+}
+.main-header {
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    min-height: 6.25rem;
+    width: 100%;
+    display: flex;
+    background: rgba(29,29,29,0.7) !important;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999999;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out 0s;
+}
+.main-header_white{
+    background: #fff!important;
+    box-shadow: 0 2px 5px 0 #bab8ba;
+}
+.nav-link-blue {
+    color:#2e37fe!important;
+}
+.btn-outline-light:hover{
+    color:#000;
+}
+.logo_blue{
+    display: none;
+}
+@media screen and (max-width: 1300px){
+    .navbar, .nav-item .btn-outline-light{        
+        font-size: 12px;
+    }
+    .main-header {
+        min-height: 4.25rem;
+    }
+    .body-header {
+        margin-top: 4.25rem !important;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .main-header {
+        min-height: auto;
+        padding: 4px 0;
+    }
+    .main-header {
+        background: #1d1d1d!important;
+    }
+    .body-header {
+        margin-top: 3.25rem !important;
+    }
+    #navbarSupportedContent .navbar-nav{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .artist-banner, .body-banner, .ranking-banner {
+        /*height: 300px !important;*/
+        min-height: 200px !important;
+    }
+
+}

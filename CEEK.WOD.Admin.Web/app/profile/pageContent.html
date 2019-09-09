@@ -1,0 +1,85 @@
+﻿<style>
+    .input {
+        border-bottom: 2px solid #0e3de8;
+        padding-bottom: 0px;
+        color: black;
+    }
+
+    /*.img-artist {
+        float: left;
+        height: 39vh;
+        margin-top: 10%;
+    }*/
+
+    .media_page_btn {
+        cursor: pointer;
+        max-width: 7.5rem;
+        height: 41px;
+        padding-left: 0px;
+    }
+
+     @media only screen and (min-width: 320px) and (max-width:790px)  {
+        .media_hr1 {
+            border-bottom: 1px solid;
+            width: 42%;
+        }
+
+        .media_par1 {
+            margin-left: 30%;
+        }
+
+        .media_page_btn {
+            width: 145%;
+            cursor: pointer;
+            max-width: 7.5rem;
+            height: 41px;
+            padding-left: 2px;
+            margin-left: 100%;
+        }
+    }
+</style>
+
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header" style="font-size:1.9rem;">Page Content</p>
+<hr class="media_hr1" />
+<div class="container col-lg-8 col-lg-offset-4">
+
+
+    <form class="subscribe-news__form" id="form2" name="form2" novalidate>
+
+        <div class="row" ng-repeat="x in UImessageModel">
+            <div class="col-lg-3 col-md-3 col-sm-12 align-self-center p-3">
+                <span class="text-rigth font-weight-bold mb-0 text-black h5 media_par1"> {{x.field_name}} :</span>&nbsp;
+
+            </div>
+            <div class="col-lg-7 col-md-6 col-sm-12 align-self-center p-3">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <textarea id="desc" style="width:100%;border:solid 2px #5677ee" name="desc" rows="3" ng-model="x.field_message" required> </textarea>
+
+                    <!--<span style="color:red" ng-show="form2.desc.$touched && form2.desc.$invalid || submitted&&form2.desc.$error.required"><b>Description required</b></span>-->
+
+                </div>
+            </div>
+            <div class="row col-lg-offset-4">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12 col-lg-offset-4 btn-group align-self-center">
+
+                    <a ng-click="messageUpdate(x)" id="create" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long media_page_btn">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Update</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="background:none;color:red;margin-left:3%;font-size:3.25vh;">
+            <b>{{message}}</b>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+

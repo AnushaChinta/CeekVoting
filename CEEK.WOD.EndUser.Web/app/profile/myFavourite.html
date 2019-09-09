@@ -1,0 +1,146 @@
+﻿<style>
+    .media_error1 {
+        background: none;
+        color: red;
+        margin-left: 37%;
+        color: red;
+        font-size: 3.25vh;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .media_error1 {
+            background: none;
+            color: red;
+            margin-left: 19%;
+            color: red;
+            font-size: 3.25vh;
+        }
+    }
+    @media only screen and (min-width: 1440px) {
+        .body-header{
+            margin-top: -3.5vh !important;
+        }
+    }
+</style>
+
+<div class="container-fluid pl-0 pr-0 body-header" style="margin-top: 0">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;">MY FAVORITE ARTISTS</p>
+</div>
+<div class="container fav">
+
+    <!--<h2 class="get-your-vr__header color-blue" style="margin-left: 46%;">SIGNUP</h2>-->
+    <form class="subscribe-news__form fav1" id="form1" name="form" novalidate style="padding-left: 0; padding-top: 12%;">
+
+        <div class="media_error1" style="">
+            <b>{{message1}}</b>
+        </div>
+
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+
+            <div class="col-md-4 col-sm-3 item" ng-repeat="x in favourites">
+                <img ng-src="{{x.fullimageurl}}" style="background: url('img/user-placeholder.png') no-repeat center;  background-size:contain;" class="artist aspect img-fluid" alt="">
+                <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                    <div class="col-8 pl-0 pr-0">
+                        <p class="text-rigth font-weight-bold mb-0 text-white h5">{{x.fullname}}</p>
+                    </div>
+                    <div class="col-4 text-right pl-0 pr-0">
+                        <a href="" class="btn btn-ceek" data-toggle="modal" ng-click="openArtistPopup(x);" data-target=".modal-artist"><img src="img/coin.png" style="width:16px;"> Vote</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+</div>
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+        <div class="modal-content artist-modal" ng-show="showArtistPopUp" style="max-width:100%;min-width:50%;padding-bottom:0px;">
+
+            <form role="form" id="form" name="form" novalidate>
+                <div class="row close-modal" data-dismiss="modal">
+                    <div class="col-12 pr-0 pl-0"><img src="img/Close.png" class="close" alt="" style="width:32px;"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{popupImage.fullimageurl}}" class="aspectinfo img-fluid" alt="">
+                        <button class="w3-button w3-display-left w3-black" style="position: absolute;top: 40%;background-color: blue; border: none;" ng-show="popupImage.showImagePrev" ng-click="popupImage.ImagePrev()">&#10094;</button>
+                        <button class="w3-button w3-display-right w3-black" style="background-color: blue;border: none;position: absolute;top: 40%;right: 0%;" ng-show="popupImage.showImageNext" ng-click="popupImage.ImageNext()">&#10095;</button>
+
+                    </div>
+                    <div class="col-md-6">
+                        <!--<div class="row text-modal pl-2 pr-2 pb-2 mr-0 ml-0">-->
+                        <div class="row pl-2 pr-2 pb-2 mr-0 ml-0" style="margin-top:7%;">
+                            <div class="col-12 pl-0 pr-0">
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5">{{selectedArtist.artistName}}</p>
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5" style="font-size:0.85rem;word-break: break-word;">{{selectedArtist.artistdescription}}</p>
+                                <p class="text-black font-weight-bold h5">Number of votes</p>
+                                <div class="input-group mb-3">
+                                    <!--<input type="text" class="form-control" placeholder="1000" aria-describedby="basic-addon2">-->
+                                    <input type="text" aria-describedby="basic-addon2" min="1" max="1000" class="form-control" name="fname" id="fname" ng-model="selectedArtist.numberofvotes" ng-pattern="/^\d+$/" required>
+
+                                    <div class="input-group-append">
+                                        <a href="" ng-click="submitted=true;vote(form);" data-target=".modal-artist" class="btn btn-ceek">Vote</a>
+                                    </div>
+
+                                </div>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$touched && form.fname.$invalid || submitted&&form.fname.$error.required"><b>Enter at least one vote</b></span>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$error.pattern"><b>Invalid Number</b></span>
+
+                            </div>
+                        </div>
+
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-6%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{message2}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-9%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{Vote_errorMessage1}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="top:-6%;position:relative">
+                            <div class="col-12" style="padding-left:0px;padding-right:0px;"><p class="text-white text-center mb-0"><img src="img/coin.png" width="16" alt=""> {{ceekpoints}} Coins <a href="" class="" ng-click="cryptoshop();" data-dismiss="modal">&nbsp;Buy More</a></p></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="background:none;color:red;top:0%;position:relative;font-size:3vh;">
+                    <div class="row" style="margin-left:2%;word-wrap:break-word"><b> {{Vote_errorMessage}}</b></div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="modal-content artist-modal" ng-show="showVoteThanksPopUp" style="max-width:100%;padding-bottom:2%;">
+
+            <div>
+                <!--<img class="img-ok" src="img/ok.png" style=" ">-->
+                <p class="color-ceek font-weight-bold" style="padding: 4%;margin-left: 14%">Thanks for your vote!</p>
+
+                <div class="row" style="margin-left:5%;">
+                    <div class="col-md-4">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="closeVoteThanksPopup()" data-dismiss="modal" class="btn btn-ceek">Vote Again</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="cryptoshop();" data-dismiss="modal" class="btn btn-ceek">Buy Ceek Token</a>
+                        </div>
+                    </div>
+                    <div class="col-md-10" style="margin-top: 2%;padding-right: 4px;">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="ranking();" data-dismiss="modal" class="btn btn-ceek">Rankings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+.body-header{
+    background: url(../img/header.png) no-repeat center;
+    background-size: cover;
+    min-height: 41px;
+
+    float: left;
+    margin-top: 15px;
+}
+.body-banner{
+    background: url(../img/BANNER.png) no-repeat center;
+    background-size: cover;
+    height: 500px;
+    min-height: 400px;
+}
+.h1{
+    font-family: Titillium Web,sans-serif;
+}
+.txt-normal{
+    font-size: 1.25rem;
+    color:#000000;
+    font-family: Segoe UI,sans-serif;
+}

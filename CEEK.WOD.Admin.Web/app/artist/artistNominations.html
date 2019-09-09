@@ -1,0 +1,119 @@
+﻿<!--<div class="container-fluid pl-0 pr-0 body-header" style="margin-top:8px;">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">{{event_name}}</p>
+</div>-->
+<!--<div class="container-fluid pl-0 pr-0 artist-banner">
+</div>-->
+
+<style>
+    .media_error1 {
+        background: none;
+        color: red;
+        margin-left: 37%;
+        color: red;
+        font-size: 3.25vh;
+    }
+
+    .w3-btn, .w3-button {
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .w3-btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+    .w3-btn, .w3-button {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+
+            .w3-disabled *, :disabled * {
+                pointer-events: none;
+            }
+
+            .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
+                box-shadow: none;
+            }
+
+    .w3-black, .w3-hover-black:hover {
+        color: #fff !important;
+        background-color: #000 !important;
+    }
+
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .media_error1 {
+            background: none;
+            color: red;
+            margin-left: 19%;
+            color: red;
+            font-size: 3.25vh;
+        }
+    }
+</style>
+
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">Nomination List</p>
+    <hr style="border-bottom: 1px solid;" />
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    <div class="media_error1" style="">
+        <b>{{message1}}</b>
+    </div>
+    <div class="row" style="font-family: Segoe UI,sans-serif;">
+        <div class="col-md-4 col-sm-3 item" ng-repeat="x in artistList">
+            <img ng-src="{{x.fullimageurl}}" style="background: url('img/user-placeholder.png') no-repeat center;  background-size:contain;" class="artist aspect img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">{{x.artistName}}</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a ng-click="Edit(x);" style="color:white;" class="btn btn-ceek"><b>Edit</b></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="w3-show-inline-block" style="margin-right:12%; margin-bottom: 4%;float:right;">
+        <div class="w3-bar">
+            <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!enablePrevPage"
+                    ng-click="prevPage()">
+                <<
+            </button>
+
+            <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal">Page:<b style="color:white;font-size:18px"> {{ pageno }} &nbsp; </b></label>
+            <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!enableNextPage"
+                    ng-click="nextPage()">
+                >>
+            </button>
+
+        </div>
+    </div>
+
+    <!--<div style="background:none;color:red;font-size:3.25vh;margin-left:40%;">
+        <span>{{message}}</span>
+    </div>-->
+
+</div>
+

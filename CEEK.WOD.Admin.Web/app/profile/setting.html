@@ -1,0 +1,489 @@
+﻿<style>
+    .input {
+        border-bottom: 2px solid #0e3de8;
+        padding-bottom: 0px;
+        color: black;
+    }
+
+    .modal-open .modal {
+        background-color: white !important;
+    }
+    /*.img-artist {
+        float: left;
+        height: 39vh;
+        margin-top: 10%;
+    }*/
+
+    .media_hr {
+        border-bottom: 1px solid;
+        width: 17%;
+    }
+
+    .media_hr2 {
+        border-bottom: 1px solid;
+        width: 20%;
+    }
+
+    .media_set_update1 {
+        cursor: pointer;
+        max-width: 7.5rem;
+        height: 41px;
+        padding-left: 7px;
+    }
+
+    .media_btn2 {
+        font-family: Segoe UI,sans-serif;
+        float: right;
+        margin-right: 4%;
+    }
+
+    .media_btn_r {
+           font-family: Segoe UI,sans-serif;
+     margin-top: 0%; 
+    margin-left: 82%;
+    }
+
+    .media_content {
+        max-width: 100%;
+        min-width: 55%;
+        margin-top: 8%;
+        padding-bottom: 0px;
+    }
+
+    .media_s_h2 {
+        margin-left: 34%;
+        margin-top: 5%;
+    }
+
+    .media_form_set {
+        padding-left: 35%;
+        cursor: pointer;
+    }
+
+    .media_update2{
+            margin-left: 0%;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .media_hr1 {
+            border-bottom: 1px solid;
+            width: 42%;
+        }
+
+        .media_hr2 {
+            border-bottom: 1px solid;
+            width: 42%;
+        }
+
+        .media_set_update1 {
+            cursor: pointer;
+            max-width: 15.5rem;
+            height: 41px;
+            padding-left: 15px;
+            margin-left: 30%;
+        }
+
+        .con2 {
+            margin-top: 5%;
+        }
+
+        .media_btn2 {
+            font-family: Segoe UI,sans-serif;
+            float: none;
+            /*margin-right:4%;*/
+        }
+
+        .media_btn_r {
+            font-family: Segoe UI,sans-serif;
+            margin-top: 0%;
+            margin-left: 0%;
+        }
+
+         .media_update2{
+            margin-left: 25%;
+    }
+
+        .media_content {
+            max-width: 100%;
+            min-width: 55%;
+            margin-top: 35%;
+            padding-bottom: 0px;
+        }
+
+        .media_s_h2 {
+            margin-left: -2%;
+            margin-top: 5%;
+        }
+
+        .media_form_set {
+            padding-left: 0%;
+            cursor: pointer;
+        }
+    }
+</style>
+
+<style scoped>
+    .mediacss {
+        width: 170%;
+    }
+
+    .mediacss_res_add {
+        width: 110%;
+    }
+
+    .mediacss_Network {
+        margin-bottom: 20px;
+        width: 120%;
+    }
+
+    .media_s_c_u {
+        margin-bottom: 20px;
+        width: 132%;
+    }
+
+    .media_v_l_o {
+        margin-bottom: 20px;
+        width: 145%;
+    }
+
+    .media_b_p{
+        margin-bottom:20px;width: 132%;
+    }
+    .media_T_C{
+          margin-bottom:20px;width: 145%;
+    }
+    @media (max-width: 1199px) {
+        .mediacss {
+            width: 135%;
+        }
+
+        .mediacss_res_add {
+            width: 113%;
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .mediacss {
+            width: 160%;
+        }
+
+        .mediacss_res_add {
+            width: 105%;
+        }
+
+        .mediacss_Network {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .media_s_c_u {
+            margin-bottom: 20px;
+            width: 121%;
+        }
+         .media_v_l_o {
+        margin-bottom: 20px;
+        width: 121%;
+       }
+
+          .media_b_p{
+        margin-bottom:20px;
+        width: 121%;
+       }
+           .media_T_C{
+          margin-bottom:20px;
+          width: 121%;
+      }
+    }
+</style>
+<!--<div class="container-fluid pl-0 pr-0 body-header" style="margin-top:5.7%;">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">Settings</p>
+</div>-->
+<!--<div class="clearfix"></div>-->
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header" style="font-size:1.9rem;">Ceek Point Settings</p>
+<hr class="media_hr1" />
+<div class="container">
+
+    <div style="margin-left:37%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    <form role="form" id="form" name="form" class="form-buy" style="padding:0%;" novalidate>
+
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+            <div class="col-md-5 item">
+
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5"><strong style="font-size: 25px;"><b>Ceek Points :</b></strong></span>&nbsp;
+
+                    <div class="col-3 pl-0 pr-0">
+                        <input type="text" style="margin-left:7%;width: auto;" class="transp-input input" placeholder="Ceek Points" id="points" name="points" ng-model="ceek_points" ng-pattern="/^[0-9]/" required />
+                        <span ng-show="form.points.$error.pattern || form.points.$touched && form.points.$invalid || submitted&&form.points.$error.required" style="color:red">
+                            <b>
+                                Please enter numbers
+                            </b>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-5 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5"><b style="font-size: 25px;">Votes :</b></span>&nbsp;
+
+                    <div class="col-3 pl-0 pr-0">
+
+                        <input type="text" style="margin-bottom:20%; margin-left:7%;" placeholder="Votes" id="votes" class="transp-input input" name="votes" ng-model="numberofvotes" ng-pattern="/^[0-9]/" required>
+                        <span ng-show="form.votes.$error.pattern || form.votes.$touched && form.votes.$invalid || submitted&&form.votes.$error.required" style="color:red;margin-bottom:10%;margin-top:-15%;margin-left:1.5%;display:block;">
+                            <b>
+                                Please enter numbers
+                            </b>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-2 item">
+                <a ng-click="submitted=true;" data-toggle="modal" data-target=".modal-artist" id="create" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long media_set_update1">
+                    <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Update</span>
+                </a>
+
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+<div class="container con2">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header" style="margin-top: 0px;font-size:1.9rem;">Blockchain Settings</p>
+    <hr class="media_hr2" />
+    <!--<div style="margin-left:45%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>-->
+    <form class="form-buy" style="padding:0px;" novalidate>
+
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+
+
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;"><b></b>CEEK Smart Contract Address:</span>&nbsp;
+
+                    <div class="col-l2 pl-0 pr-0 pt-2">
+                        <input type="text" class="transp-input input mediacss" placeholder="Ceek Points" id="1" name="points" ng-model="smartcontract_address" ng-pattern="/^[0-9]/" required />
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;"><b style="font-size: 1.5rem;"></b>CEEK Reserve Address:</span>&nbsp;
+
+                    <div class="col-12 pl-0 pr-0 pt-2">
+
+                        <input type="text" style="margin-bottom:20px;" placeholder="Votes" id="2" class="transp-input input mediacss_res_add" name="votes" ng-model="owner_address" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;"><b></b>Network Url (Ropsten/Main):</span>&nbsp;
+
+                    <div class="col-12 pl-0 pr-0 pt-2">
+
+                        <input type="text" placeholder="Votes" id="3" class="transp-input input mediacss_Network" name="votes" ng-model="public_neturl" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Voting Smart Contract Address:</span>&nbsp;
+
+                    <div class="col-l0 pl-0 pr-0 pt-2">
+                        <input type="text" class="transp-input input mediacss" placeholder="Ceek Points" id="4" name="points" ng-model="private_contractaddress" ng-pattern="/^[0-9]/" required />
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Voting Smart Contract Url:</span>&nbsp;<br />
+
+                    <div class="col-10 pl-0 pr-0 pt-2">
+
+                        <input type="text" placeholder="Votes" id="5" class="transp-input input media_s_c_u" name="votes" ng-model="private_neturl" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Voting Ledger Owner:</span>&nbsp;
+
+                    <div class="col-10 pl-0 pr-0 pt-2">
+
+                        <input type="text" placeholder="Votes" id="6" class="transp-input input media_v_l_o" name="votes" ng-model="private_fromaccount" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Voting Ledger Private Key</span>&nbsp;
+
+                    <div class="col-l0 pl-0 pr-0 pt-2">
+                        <input type="text" class="transp-input input mediacss" placeholder="Ceek Points" id="7" name="points" ng-model="private_privatekey" ng-pattern="/^[0-9]/" required />
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Enable Batch Process :</span>&nbsp;
+
+                    <div class="col-10 pl-0 pr-0 pt-2">
+
+                        <input type="text" placeholder="Votes" id="8" class="transp-input input media_b_p" name="votes" ng-model="enablebatchprocess" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 item">
+
+                <div class="row pl-3 pr-3 pt-3 pb-2 mr-0 ml-0">
+                    <span class="text-rigth font-weight-bold mb-0 text-black h5" style="font-size: 1.5rem;">Batch Token Count:</span>&nbsp;
+
+                    <div class="col-10 pl-0 pr-0 pt-2">
+
+                        <input type="text" placeholder="Votes" id="9" class="transp-input input media_T_C" name="votes" ng-model="batch_tokencount" ng-pattern="/^[0-9]/" required>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row media_btn_r">
+            <div class="col-md-12 item">
+                <a ng-click="submitted=true;" data-toggle="modal" data-target=".modal-artist" id="create" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long media_update2">
+                    <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Update</span>
+                </a>
+                <br />
+                <div class="clearfix"></div>
+            </div>
+
+
+
+
+        </div>
+        <!--<div class="row media_btn2">
+            <div class="col-md-3 item">
+
+               
+            </div>
+        </div>-->
+
+
+    </form>
+
+
+</div>
+
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="false">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+        <div class="modal-content artist-modal media_content">
+
+            <div class="container">
+
+                <h2 class="get-your-vr__header color-blue media_s_h2">Verify Credentails</h2>
+                <form class="subscribe-news__form media_form_set" id="form_setting" name="form_setting" novalidate>
+                    <div class="row">
+                        <div class="subscribe-news__input col-lg-12 col-md-12 col-sm-12" style="">
+                            <input id="username" type="text" class="transp-input input" ng-click="MSG();" name="username" ng-model="username" placeholder="Ceeker ID or Email" maxlength="30" style="color:#2E37FE" required>
+
+                        </div>
+
+                    </div>
+                    <span class="titulo type2_titulo_top align-self-center align-content-center" ng-show="errmsg" style="color:red;background:none;margin-top:2%;">
+                        <b>Please enter username here</b>
+                    </span>
+                    <!--<span style="color:red;" ng-show="submitted&&form_setting.username.$error.required||form_setting.username.$touched && form_setting.username.$invalid"><b>Please enter username here</b></span>-->
+
+                    <div class="row">
+                        <div class="subscribe-news__input col-lg-12 col-md-12 col-sm-12" style="">
+                            <input id="password" type="password" class="transp-input input" ng-click="MSG();" ng-model="password" placeholder="Password" name="password" style="color:#2E37FE" required>
+                            <!--<span style="color:red;" ng-show="submitted&&form_setting.password.$error.required||form_setting.password.$touched && form_setting.password.$invalid"><b>Please enter password here</b></span>-->
+
+                        </div>
+
+                    </div>
+                    <span class="titulo type2_titulo_top align-self-center align-content-center" ng-show="errmsg" style="color:red;background:none;margin-top:2%;">
+                        <b>Please enter password here</b>
+                    </span>
+                    <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;font-size:2.0vh;background:none;margin-top:2%;margin-left:14%;">
+                        <b>{{message}}</b>
+                    </div>
+                    <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:green;font-size:2.0vh;background:none;margin-top:2%;margin-left:14%;">
+                        <h4><b>{{message1}}</b></h4>
+                    </div>
+                    <div class="row" style="margin-bottom: 10%;">
+                        <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12 btn-group">
+
+                            <a value="Cancel" id="cancel" ng-click="cancel();MSG();" data-dismiss="modal" style="cursor:pointer;height: 41px;padding-left: 0px;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long">
+                                <span class="btn-w-icon__text col-lg-3 col-md-6" style="color:blue">Cancel</span>
+                            </a>&nbsp;
+                            <a ng-click="submitted=true;Verify(form_setting);" id="verify" style="cursor:pointer;height: 41px;padding-left: 0px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                                <span class="btn-w-icon__text col-lg-4 col-md-6">&nbsp;Verify</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+

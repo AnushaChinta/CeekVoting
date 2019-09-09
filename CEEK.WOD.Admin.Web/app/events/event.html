@@ -1,0 +1,28 @@
+﻿<!--<div class="container-fluid pl-0 pr-0 body-header" style="margin-top:8px;">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">Event List</p>
+</div>-->
+<!--<div class="container-fluid pl-0 pr-0 artist-banner">
+</div>-->
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">Event List</p>
+    <hr style="border-bottom: 1px solid;" />
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    
+    <div class="row" style="font-family: Segoe UI,sans-serif;">
+        <div class="col-md-4 item" ng-repeat="x in eventList">
+            <img ng-src="{{x.fullimageurl}}" class="artist aspect img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">{{x.event_name}}</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a ng-click="Edit(x);" style="color:white;" class="btn btn-ceek"><b>Edit</b></a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+

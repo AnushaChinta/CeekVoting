@@ -1,0 +1,63 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+    .input{
+        border-bottom: 2px solid #0e3de8;
+    }
+</style>
+
+<div class="container" style="margin-top:10%">
+    
+    <h2 class="get-your-vr__header color-blue"  style="margin-left: 46%;">SIGNUP</h2>  
+    <form class="subscribe-news__form" id="form1" name="form" novalidate style="padding-left:35%">
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input type="text" placeholder="Email" class="transp-input input" name="Email" ng-model="model.email" ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i' required />
+
+            </div>
+
+        </div>
+        <span style="color:red;" ng-show="form.Email.$touched && form.Email.$invalid || submitted&&form.Email.$error.required"><b>Email required</b></span>
+        <span style="color:red;" ng-show="form.Email.$error.pattern">Please enter valid email address.</span>
+
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input type="text" placeholder="Ceeker Name" class="transp-input input" name="text" ng-model="model.userName" ng-pattern="/^[a-zA-Z0-9\_]*$/" required />
+                <span style="color:red;" ng-show="form.text.$touched && form.text.$invalid || submitted&&form.text.$error.required"><b>Name required</b></span>
+                <span style="color:red;" ng-show="form.text.$error.pattern"><b>Invalid format</b></span>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input type="password" placeholder="Password" class="transp-input input" name="password" ng-model="model.password" ng-init="password_error= 0" ng-change="password_error= password_error= 0 + 1;" required />
+
+                <span style="color:red;" ng-show="form.password.$touched && form.password.$invalid || submitted&&form.password.$error.required"><b>Password required</b></span>
+
+            </div>
+            </div>
+            <div class="row">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <input type="password" id="password" class="transp-input input" placeholder="Confirm Password" name="txtCPasswrod" ng-model="model.confirmpassword" ng-init="cpassword_error= 0" ng-change="cpassword_error= cpassword_error= 0 + 1;" required />
+                    <span style="color:red;" ng-show="cpassword_error>0 && model.password !==model.confirmpassword"><b>Sorry , Passwords Mismatch</b></span>
+                    <span style="color:red;" ng-show="cpassword_error>0 && model.password === model.confirmpassword && passValidation">ok !</span>
+                    <span style="color:red;" ng-show="submitted&&form.txtCPasswrod.$error.required || form.txtCPasswrod.$touched && form.txtCPasswrod.$invalid"><b>Please confirm your password here</b></span>
+
+                </div>
+
+            </div>
+       
+        <div class="row" style="padding-left:16%">
+
+            <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                <a ng-click="submitted=true;save(form)" id="login" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                    <img class="get_more-w-icon__img" src="./img/icon.png" alt="icon lock"> <span class="btn-w-icon__text">&nbsp;Signup</span>
+                </a>
+            </div>
+        </div>
+    </form>
+
+
+</div>

@@ -1,0 +1,771 @@
+.color-ceek{
+    color: #2E37FE;
+}
+.btn-ceek{
+    width: 100px;
+    border: #fff solid 1px;
+    background: -webkit-linear-gradient(left,#2e37c5,#2E37FE,#99CCFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left,#2e37c5,#2E37FE,#99CCFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left,#2e37c5,#2E37FE,#99CCFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(left,#2e37c5,#2E37FE,#99CCFF); /* Standard syntax */
+    text-decoration: none;
+    color: #fff;
+}
+.modal-backdrop
+{
+    background: #fff;
+    opacity:0.8 !important;
+}
+.fadescreen {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 8000; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+#floatingCirclesG {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin: auto;
+    transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    z-index: 8001;
+    margin-top: 20%;
+}
+
+.f_circleG {
+    position: absolute;
+    background-color: rgb(255,255,255);
+    height: 22px;
+    width: 22px;
+    border-radius: 12px;
+    -o-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    animation-name: f_fadeG;
+    -o-animation-name: f_fadeG;
+    -ms-animation-name: f_fadeG;
+    -webkit-animation-name: f_fadeG;
+    -moz-animation-name: f_fadeG;
+    animation-duration: 1.2s;
+    -o-animation-duration: 1.2s;
+    -ms-animation-duration: 1.2s;
+    -webkit-animation-duration: 1.2s;
+    -moz-animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -o-animation-direction: normal;
+    -ms-animation-direction: normal;
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+}
+
+#frotateG_01 {
+    left: 0;
+    top: 51px;
+    animation-delay: 0.45s;
+    -o-animation-delay: 0.45s;
+    -ms-animation-delay: 0.45s;
+    -webkit-animation-delay: 0.45s;
+    -moz-animation-delay: 0.45s;
+}
+
+#frotateG_02 {
+    left: 15px;
+    top: 15px;
+    animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    -ms-animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+}
+
+#frotateG_03 {
+    left: 51px;
+    top: 0;
+    animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
+    -ms-animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+}
+
+#frotateG_04 {
+    right: 15px;
+    top: 15px;
+    animation-delay: 0.9s;
+    -o-animation-delay: 0.9s;
+    -ms-animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
+}
+
+#frotateG_05 {
+    right: 0;
+    top: 51px;
+    animation-delay: 1.05s;
+    -o-animation-delay: 1.05s;
+    -ms-animation-delay: 1.05s;
+    -webkit-animation-delay: 1.05s;
+    -moz-animation-delay: 1.05s;
+}
+
+#frotateG_06 {
+    right: 15px;
+    bottom: 15px;
+    animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    -ms-animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+}
+
+#frotateG_07 {
+    left: 51px;
+    bottom: 0;
+    animation-delay: 1.35s;
+    -o-animation-delay: 1.35s;
+    -ms-animation-delay: 1.35s;
+    -webkit-animation-delay: 1.35s;
+    -moz-animation-delay: 1.35s;
+}
+
+#frotateG_08 {
+    left: 15px;
+    bottom: 15px;
+    animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+}
+
+
+
+@keyframes f_fadeG {
+    0% {
+        background-color: rgb(0,0,0);
+    }
+
+    100% {
+        background-color: rgb(255,255,255);
+    }
+}
+
+@-o-keyframes f_fadeG {
+    0% {
+        background-color: rgb(0,0,0);
+    }
+
+    100% {
+        background-color: rgb(255,255,255);
+    }
+}
+
+@-ms-keyframes f_fadeG {
+    0% {
+        background-color: rgb(0,0,0);
+    }
+
+    100% {
+        background-color: rgb(255,255,255);
+    }
+}
+
+@-webkit-keyframes f_fadeG {
+    0% {
+        background-color: rgb(0,0,0);
+    }
+
+    100% {
+        background-color: rgb(255,255,255);
+    }
+}
+
+@-moz-keyframes f_fadeG {
+    0% {
+        background-color: rgb(0,0,0);
+    }
+
+    100% {
+        background-color: rgb(255,255,255);
+    }
+}
+
+.aspectinfo {
+    object-fit: cover;
+    object-position: top;
+    min-height: 28vh;
+}
+
+.aspect {
+    object-fit: cover;
+    object-position: top;
+  
+}
+#savedcard{
+     height: 32px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 0.8px solid white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    margin-top: 2vh;
+    background: transparent;
+    color: #fff;
+    padding: 1vh;
+    border-radius: 0.5vw;
+    border-width: 0.2vh;
+    outline: none;
+    font-size: 2vh;
+    width: 94%;
+   border: .125rem solid rgba(113,189,255,.33) ;
+    margin-left: 3%;
+    color:black;
+}
+.StripeElement {
+    height: 38px;
+    padding: 10px 12px;
+    /*border-radius: 4px;*/
+    border: 0.8px solid white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    margin-top: 2vh;
+    background: transparent;
+    color: #fff;
+    padding: 1vh;
+    border-radius: 0.5vw;
+    border-width: 0.2vh;
+    outline: none;
+    font-size: 2vh;
+    width: 94%;
+    border: .125rem solid rgba(113,189,255,.33) ;
+    margin-left: 3%;
+    color:black;
+}
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    color: black;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+.card-number {
+    width: 40%;
+}
+
+.my {
+    width: 23%;
+}
+
+.cvc {
+    width: 23%;
+}
+.prof {
+    margin-left: 17.25%;
+    margin-top: -7%;
+    border: none;
+    color: blue;
+    background: none;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: Titillium Web, sans-serif;
+  background: #fafafa;
+  padding-right: 0 !important;
+  overflow-y: auto !important;
+  }
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 320px) and (max-width:1024px) {
+   
+    .the-artist {
+    font-size: 1rem!important;
+    width: 40vw !important;
+}
+    .remove{
+        width: 9vw !important;
+        margin-left: 68vw !important;
+		height: 5vh !important;
+    }
+    .scrollcss{
+        width:100% !important;
+    }
+    .aspectfooter {
+    width: 317px !important;
+   height: 26vh !important;
+    }
+    .aspectheader {
+    width: 365px !important;
+   height: 26vh !important;
+}
+    .hs {
+        grid-template-columns: 10px repeat(6, calc(85vw - var(--gutter) * 2)) 10px !important;
+    }
+    .imagenext{
+            bottom: 370px !important;
+            left: 89% !important;
+            width: 11% !important;
+    }
+    .imageprev{
+            width: 12% !important;
+            bottom: 178px !important;
+             right:0px !important;
+    }
+    .videonext{
+            bottom: 254px !important;
+            left: 89% !important;
+            width: 11% !important;
+    }
+    .videoprev{
+            width: 12% !important;
+            bottom: 87px !important;
+            right:0px !important;
+    }
+     .audionext{
+            bottom: 200px !important;
+            left: 89% !important;
+            width: 11% !important;
+    }
+    .audioprev{
+            width: 12% !important;
+            bottom: 87px !important;
+            right:0px !important;
+    }
+   
+    .footer{
+        margin-top: -76%!important;
+    width: 103vw !important;
+    padding: 36px 5px 95px 23px !important;
+    }
+     .cont {
+      margin-top: 0%;
+    }
+    .cont1{
+    padding-left:19%;
+    padding-top: 37%;
+    }
+    .cont3{
+    padding-left:9%;
+    padding-top: 34%;
+    }
+    .cont2{
+       margin-top:0px;
+   }
+    .tablinks{
+        width:32%;
+        padding:0px !important;
+    }
+    .form-buy{
+        width:100% !important;
+        padding: 1vh 8vw 0 !important;
+    }
+    .modal{
+        top:11% !important;
+    }
+    .close{
+        width: 27px !important;
+        margin: 6vh 9% 79% -61% !important;
+    }
+    .crypt{
+    margin-left: 25% !important;
+    margin-bottom: 7% !important;
+    }
+    .crypt1{
+        width:50% !important;
+    }
+     .crypt2{
+ 
+    margin-bottom: 7% !important;
+    }
+     .crypt3{
+         width:79% !important;
+     }
+     .crypt4{
+         padding:0px !important;
+     }
+     .eve{
+         margin-top:0px !important;
+         width:auto !important;
+     }
+     .error{
+         margin-left: 0% !important;
+     }
+     .error1{
+         margin-left:15% !important
+     }
+     .error2{
+         margin-left:22% !important
+     }
+     .profmenu{
+         margin-left: 21vw !important;
+          width: 30% !important;
+     }
+     .logincss{
+         margin-top: 22% !important;
+     }
+     .logincss1{
+         padding-left: 8% !important;
+     }
+     .logincss2{
+         width:59% !important;
+     }
+     .logincss3{
+         margin-left:0px !important;
+
+     }
+     .logincss13{
+         margin-left:0px !important;
+
+     }
+     .logincss4{
+         margin-top: 3% !important;
+     }
+     .logincss5{
+         margin-left: 27% !important;
+         width: 43vw !important;
+     }
+     .logincss6{
+        margin: 9% -39.5% !important;
+     }
+     .logincss7{
+         width: 100% !important;
+     }
+     .logincss8{
+         margin-left: 30% !important;
+     }
+     .logincss9{
+         margin-left: 34% !important;
+     }
+     .logincss10{
+         margin-left: 2% !important;
+     }
+     .logincss11{
+         margin: 10px 5px 10px !important;
+     }
+     .css{
+         font-size: 1.15rem !important;
+     }
+     .css2{
+             margin-left: 18% !important;
+     }
+     .fav{
+     margin-top: 0% !important;
+   
+     }
+     .fav1{
+         padding-top: 42% !important;
+     }
+    .banner {
+        margin-top: 14% !important;
+    }
+    .bancont{
+        margin-top:1% !important;
+    }
+    .Pnext{
+     width: 11% !important;
+     bottom: 186px !important;
+    }
+    .Pprev{
+          width: 11% !important;
+          bottom: 186px !important;
+    }
+     .NPnext{
+     width: 11% !important;
+     bottom: 186px !important;
+     left: 78% !important;
+     top: -22vh !important;
+    }
+    .NPprev{
+          width: 11% !important;
+          bottom: 186px !important;
+          right: 0px !important;
+          top: -22vh !important;
+    }
+    .Anext{
+     width: 11% !important;
+    }
+    .Aprev{
+          width: 11% !important;
+    }
+    .NAnext{
+    width: 11% !important;
+    top: -19vh !important;
+    left: 77vw !important;
+    }
+    .NAprev{
+    width: 11% !important;
+    top: -19vh !important;
+    right: -2vw !important;
+    }
+    .Vnext{
+        bottom: 117px !important;
+        width: 11% !important;
+        left: 80% !important;
+    }
+    .Vprev{
+    bottom: 117px !important;
+    width: 11% !important;
+     }
+    .NVnext{
+        bottom: 117px !important;
+        width: 11% !important;
+        top: -18vh !important;
+        left: 78vw !important;
+    }
+    .NVprev{
+    bottom: 117px !important;
+    width: 11% !important;
+    top: -18vh !important;
+    right: -9px !important;
+     }
+    .favpopup{
+    top: -42px !important;
+    right: 5% !important;
+    }
+    .npopup{
+        width:300px !important;
+        margin-left: 8% !important;
+    }
+    .npopup1{
+    margin-top: 5% !important;
+    margin-left: 4% !important;
+    font-size: 1.25rem !important;
+    width: 20rem !important;
+    }   
+}
+@media only screen and (min-width : 1024px) and (max-width: 1280px) {
+    .Vnext{
+        bottom: 135px !important;
+    }
+    .Vprev{
+    bottom: 135px !important;
+     }
+    .banner{
+        margin-top:5% !important;
+    }
+    .footer{
+        margin-top: -31.2% !important;
+        padding: 52px 52px 148px 52px !important;
+    }
+	.remove{
+		height: 5vh !important;
+	}
+     .cont {
+      margin-top: 0%;
+    }
+    .cont1{
+    padding-left: 40%;
+    padding-top: 14%;
+    }
+     .cont3{
+    padding-left: 40%;
+    padding-top: 14%;
+    }
+    .cont2{
+       margin-top:0px;
+   }
+    .tablinks{
+        width:auto;
+       padding: 6px 16px;
+    }
+    .box{
+        width:1200px!important;height:500px!important;
+    }
+    .fav1{
+    padding-left: 0 !important;
+    padding-top: 16% !important;
+    }
+    .the-artist{
+    font-size: 1rem !important;
+    width: 14vw !important;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .logincss6{
+       margin: 5% -28.5% !important;
+     }
+    .logincss13{
+        margin-left:-10% !important;
+    }
+    .the-artist{
+    font-size: 1rem !important;
+    width: 14vw !important;
+    }
+     .cont {
+      margin-top: 6.9%;
+    }
+    .cont1{
+    padding-left: 31%;
+    padding-top: 18%;
+    }
+     .cont3{
+    padding-left: 31%;
+    padding-top: 18%;
+    }
+    .cont2{
+       margin-top:49px;
+   }
+    .tablinks{
+        width:auto;
+       padding: 6px 16px;
+    }
+    .fav{
+        margin-top: 7% !important;
+    }
+     .box{
+       width: 86vw !important;
+    height: 500px!important;
+    }
+      .banner{
+        margin-top:5% !important;
+    }
+      .bancont{
+        margin-top:26% !important;
+        max-width: 96vw !important;
+    }
+      .music-exp-single{
+          max-width: 100vw !important;
+      }
+      .hs > li, .item{
+          display:block;
+      }
+      .footer{
+          padding: 0px 52px 107px 52px !important;
+          margin-top: -20.75% !important;
+          width: 100.8vw !important;
+      }
+      .moreartistcss{
+     margin-top: 0%;
+    max-width: 88vw;
+      }
+      .remove{
+          margin-left: 14vw !important;
+      }
+      video{
+          width:370px !important;
+          height:210px !important;
+          margin-top: 0% !important;
+      }
+      iframe{
+          width:370px !important;
+          height:210px !important;
+      }
+      .vid{
+          grid-template-columns: 10px repeat(6, calc(25% - var(--gutter) * 2)) 10px !important;
+      }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1400px) and (min-width: 1360px) {
+    .the-artist{
+    font-size: 1rem !important;
+    width: 14vw !important;
+    }
+    .cont {
+        margin-top:7.4%;
+    }
+    .cont1{
+    padding-left: 41%;
+    padding-top: 10%;
+    }
+     .cont3{
+    padding-left: 41%;
+    padding-top: 10%;
+    }
+    .cont2{
+        margin-top:50px;
+    }
+    .tablinks{
+        width:auto;
+       padding: 6px 16px;
+    }
+    .fav {
+        margin-top:7.4%;
+
+    }
+     .box{
+        width:1120px;height:500px;
+    }
+      
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1920px) {
+    .the-artist{
+    font-size: 1rem !important;
+    width: 14vw !important;
+    }
+     .cont {
+        margin-top:5.2%;
+    }
+      .fav {
+        margin-top:5.2%;
+    }
+    .medianame {
+        width: 230px;
+        display: inline-block;
+        text-align: left;
+    }
+    .tablinks{
+        width:auto;
+       padding: 6px 16px;
+    }
+
+    .box{
+        width:1200px;height:500px;
+    }
+     .banner{
+        margin-top:5% !important;
+    }
+      .bancont{
+        margin-top:26% !important;
+        max-width: 96vw !important;
+    }
+      .music-exp-single{
+          max-width: 100vw !important;
+      }
+      .hs > li, .item{
+          display:block;
+      }
+}
+
+.vr-headset-single-block__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    margin: 15px auto 0;
+}
+ 
+ 

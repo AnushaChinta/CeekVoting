@@ -1,0 +1,89 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: blue;
+         font-size: 16px;
+    font-weight: bold
+    }
+
+    .input {
+        border-bottom: 2px solid #0e3de8;
+    }
+    span{
+        font-size: 16px;
+    font-weight: bold
+    }
+    lable{
+         font-size: 16px;
+    font-weight: bold
+    }
+</style>
+
+<div class="container-fluid pl-0 pr-0 body-header" style="margin-top:0">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;">Edit Profile</p>
+</div>
+
+
+<div class="container cont">
+
+        <!--<h2 class="get-your-vr__header color-blue" style="margin-left: 46%;">SIGNUP</h2>-->
+        <form class="subscribe-news__form cont1" id="form1" name="form" novalidate>
+           
+            <div class="row" ng-show="msg">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <span>Email</span>
+                    <lable class="prof">{{profilemodel.email}}</lable>
+
+                </div>
+
+            </div>
+            <div class="row" ng-show="msg">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <span>Username</span>
+                    <lable class="prof" style="margin-left:6.5%;">{{profilemodel.userName}}</lable>
+
+                </div>
+
+            </div>
+              
+
+                
+            <div class="row">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <span>Full Name</span>
+                    <input type="text" placeholder="Full Name" class="transp-input input" id="name" name="name" style="margin-left:6.8%;width:60%" ng-model="profilemodel.fullName" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                    <span>Gender</span>
+
+                    <input type="radio" name="gender" value="male" ng-model="profilemodel.gender" style="margin-left:11.5%;">&nbsp<span>Male</span>
+                    <input type="radio" name="gender" value="female" ng-model="profilemodel.gender" style="width:6%;margin-left:3%;"><span>Female</span>
+
+                </div>
+
+            </div>
+            <div id="message" style="margin:1% 8%;">
+                <b style="color:red;">{{message}}</b>
+            </div>
+            <div class="row" style="padding-left:3%;">
+
+                <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12 btn-group">
+                    <a value="Cancel" id="cancel" ng-click="cancel();" style="max-width: 7.5rem;cursor:pointer;height: 41px;padding-left: 7px;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6" style="color:blue">Cancel</span>
+                    </a>&nbsp;
+                    <a ng-click="submitted=true;UpdateUserProfileAPI(profilemodel);" data-toggle="modal" id="create" style="cursor:pointer;max-width: 6.5rem;height: 41px;padding-left: 7px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Save</span>
+                    </a>
+                </div>
+            </div>
+            <div id="message" style="margin:2% 3%;" ng-show="showVoteThanksPopUp">
+                <b style="color:red;">Session Expired!</b>
+                <b style="color:blue;cursor:pointer;"><a ng-click="Logout();">Please Login</a></b>
+            </div>
+</form>
+
+
+    </div>

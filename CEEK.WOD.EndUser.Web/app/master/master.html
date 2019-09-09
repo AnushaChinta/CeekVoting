@@ -1,0 +1,275 @@
+﻿
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark pl-4 pr-4 fixed-top main-header">
+        <a class="navbar-brand logo_white" target="_blank" href="https://www.ceek.com/"><img src="img/ceek-logo.svg" alt="" style="width:50px"></a>
+        <a class="navbar-brand logo_blue" target="_blank" href="https://www.ceek.com/"><img src="img/ceek-logo-blue-logo.svg" alt=""style="width:50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item active" ng-show="isAuth">
+                    <a class="nav-link pr-3">
+                        <select class="btn btn-outline-light eve" ng-disabled="isdropAuth" style="margin-top:-7.5%;width: 100%;margin-right:15px;" data-toggle="dropdown" id="ddlproject" data-ng-model="selectedEvent" data-ng-options="e.event_name for e in eventList" ng-change="EventChanged()"></select>
+
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link pr-3" href="https://www.ceek.com/vr-experiences" target="_blank">VR EXPERIENCES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pr-3" href="https://www.ceek.com/vr-headset" target="_blank">VR HEADSET</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pr-3" href="https://www.ceek.com/itunesreward" target="_blank">ITUNES+CEEK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pr-3" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="artist();" href="">VOTE</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link pr-3" data-toggle="collapse" data-target=".navbar-collapse.show" href="" ng-click="ranking();">RANKING</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link pr-3" data-toggle="collapse" data-target=".navbar-collapse.show" href="" ng-click="nominate();">NOMINATE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pr-3" data-toggle="collapse" data-target=".navbar-collapse.show" href="" ng-click="cryptoshop();">BUY COINS</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item">
+                    <a class="nav-link pr-3" href=""><img src="img/icon.png" width="12" ng-show="isAuth"><span style="font-size:15px; margin: 10px; margin-left:2px;" ng-show="isAuth"> {{ceekPoints}}</span></a>
+                </li>
+                 <li class="nav-item" ng-show="!isAuth">
+                    <a class="nav-link pr-3" data-toggle="collapse" data-target=".navbar-collapse.show" style="cursor:pointer;" ng-click="signup()">SIGN UP</a>
+                </li>
+                <li class="nav-item" ng-show="!isAuth">
+                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse.show" class="btn btn-outline-light" ng-click="login();">LOGIN</button>
+                </li>
+                <li class="nav-item logincss11" style="margin: 0px 5px 10px;">
+                    <!--<a href="" class="get_more-w-icon get_more-w-icon_blue-gradient get_more-w-icon_border-malibu get_more-w-icon_long m-auto" style="max-width: 7rem; height: 2.40rem;padding-left: 9px; padding-right: 7px;text-decoration: none;">
+                        <img class="get_more-w-icon__img" src="./img/lock-icon.png" alt="icon lock"><span class="get_more-w-icon__text" style="letter-spacing: 0px;" ng-click="shop();">&nbsp;SHOP</span>
+                    </a>-->
+                    <button type="button" class="btn btn-outline-light btn1" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="shop();" style="line-height: 1.45;color:white;border-radius: .4375rem;border: 2px solid #71bdff;box-shadow: 0 0 0.5rem #2e37fe;background-image: linear-gradient(252deg,#71bdff,#151cbf);">
+                        <img class="get_more-w-icon__img" src="./img/lock-icon.png" alt="icon lock" width="12"> SHOP
+                    </button>
+                   
+                    <li class="nav-item dropdown" ng-show="isAuth">
+                        <img ng-src="{{avatar}}" class="btn" data-toggle="dropdown" style="width: 53px;padding: 0px;border-radius: 50%;"/>
+                    <!--<button type="button" class="btn btn-outline-light" data-toggle="dropdown" style="padding-left: 19px;padding-right: 19px;">
+                        Profile
+                    </button>-->
+                    <div class="dropdown-menu profmenu" style="margin-left:-8vw;">
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="Profile()">Edit Profile</a>
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="vote()">My Votes</a>
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="account()">Account Details</a>
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="accountHistory()">Transaction History</a>
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="favorite()">My Favorites</a>
+                        <!--<a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="nominate()">Nominate Artist</a>-->
+                        <a class="dropdown-item" href="" data-toggle="collapse" data-target=".navbar-collapse.show" ng-click="Logout()">Logout</a>
+                    </div>
+                </li>
+                <!--<li class="nav-item" ng-show="isAuth">
+                    <button type="button" class="btn btn-outline-light" ng-click="Logout();">LOGOUT</button>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+    <!--<div class="container-fluid pl-0 pr-0 body-header" ng-show="isAuth">
+        <p class="text-center font-weight-bold mb-0 pt-3 text-light">VOTING</p>
+    </div>-->
+<!--<div class="container-fluid pl-0 pr-0 body-header" ng-show="!isAuth">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">VOTING</p>
+</div>
+<div class="container-fluid pl-0 pr-0 body-banner" ng-show="!isAuth">
+</div>
+<div class="container" ng-show="!isAuth">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">Vote for your favorite show</p>
+    <p class="text-center font-weight-normal mb-4 pl-md-5 pr-md-5 txt-normal">
+        Lorem spicy jalapeno bacon ipsum dolor amet mollit jowl bacon sunt turducken.
+        Ut spare ribs andouille venison occaecat do ut pork pork belly nulla elit mignon.
+    </p>
+    <a href="/#!/artist"><img src="img/idol.png" class="rounded img-fluid p-3" alt=""></a>
+    <a href="/#!/artist"><img src="img/movie.png" class="rounded img-fluid p-3" alt=""></a>
+    <a href="/#!/artist"><img src="img/vma.png" class="rounded img-fluid p-3" alt=""></a>
+
+</div>-->
+
+
+    <!--INNER CONTENT HERE-->
+    <div role="main">
+        <ui-view></ui-view>
+    </div>
+
+    <div class="container-fluid background_get_more pl-0 pr-0">
+        <div class="container subscribe-news">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="get-your-vr__header color-white">Get more CEEK Coins</h2>
+                    <p class="get_more__description">
+                     {{field_message2}}
+                    </p>
+                    <a href="" class="get_more-w-icon get_more-w-icon_blue-gradient get_more-w-icon_border-malibu get_more-w-icon_long m-auto" ng-click="buy();">
+                        <img class="get_more-w-icon__img" src="./img/lock-icon.png" alt="icon lock"><span class="get_more-w-icon__text">&nbsp;BUY MORE</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid background_get-your-vr pl-0 pr-0">
+        <img src="./img/headphones3762.png" alt="apple logotype" class="get-your-vr__img" />
+        <div class="container">
+            <div class="get-your-vr__wrap">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-7 col-12">
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-md-5 col-12">
+                        <h2 class="get-your-vr__header color-blue">Get Your VR Headset</h2>
+                        <p class="get-your-vr__description text_darken">
+                            Enjoy exclusive premium concerts, movies, games and other exciting experiences in massive VR Venues.
+                        </p>
+                        <div class="get-your-vr__btns">
+                            <a style="text-align: center;" href="" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" ng-click="shop();">
+                                <span style="width:100%">
+                                    <img class="btn-w-icon__img" src="./img/lock-icon.png" alt="icon lock"><span class="btn-w-icon__text">&nbsp;BUY NOW</span>
+                                </span>
+                            </a>
+                            <a href="" onMouseOver="this.style.color='black'" onMouseOut="this.style.color='black'" class="btn-more" data-wow-delay="1s" ng-click="shop();">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid background_subscribe pl-0 pr-0">
+        <div class="container subscribe-news">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="subscribe-news__header">Subscribe to our Newsletter</h2>
+                </div>
+            </div>
+            <form action="" class="subscribe-news__form">
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                        <input type="text" value="" class="transp-input" placeholder="First Name">
+                    </div>
+                    <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                        <input type="text" value="" class="transp-input" placeholder="Last Name">
+                    </div>
+                    <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                        <input type="email" value="" class="transp-input" placeholder="Email">
+                    </div>
+                    <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                        <button class="btn-w-icon-big m-auto">
+                            <span class="btn-w-icon-big__text">Sign Up &nbsp;</span><i class="btn-w-icon-big__img fas fa-angle-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container-fluid footer-background pl-0 pr-0">
+        <div class="container" id="contenido">
+            <div class="pre-footer" key="A">
+                <div class="pre-footer__wrap">
+                    <div class="pre-footer__info">
+                        <a class="logo logo_big" target="_blank" href="https://www.ceek.com/">
+                            <img class="logo__img centarado" src="./img/blue-logo.svg" alt="logotype" />
+                        </a>
+                        <span class="text_darken text_14">Your Ultimate Virtual Reality Experience</span>
+                    </div>
+                    <div class="pre-footer__columns">
+                        <ul class="pre-footer__list">
+                            <li class="pre-footer__list-item"><span class="text_blue text text_fw-600">MENU</span></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/vr-experiences" class="text_darken text_15">Music Experiences</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/vr-headset" class="text_darken text_15">VR Headset</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/itunesreward" class="text_darken text_15">iTunes Reward</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/vr-blog" class="text_darken text_15">Interviews</a></li>
+                        </ul>
+                        <ul class="pre-footer__list">
+                            <li class="pre-footer__list-item"><span class="text_blue text text_fw-600">COMPANY</span></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/about-us" class="text_darken text_15">About Us</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/leadership" class="text_darken text_15">Our Team</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/career/all" class="text_darken text_15">Careers</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/news" class="text_darken text_15">Press</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/contact" class="text_darken text_15">Contact</a></li>
+                        </ul>
+                        <ul class="pre-footer__list">
+                            <li class="pre-footer__list-item"><span class="text_blue text text_fw-600">GET STARTED</span></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/quickstart" class="text_darken text_15">QuickStart Guide</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/terms" class="text_darken text_15">Terms</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/privacy" class="text_darken text_15">Privacy</a></li>
+                            <li class="pre-footer__list-item"><a target="_blank" href="https://www.ceek.com/support" class="text_darken text_15">Support</a></li>
+                        </ul>
+                        <ul class="pre-footer__list">
+                            <li class="pre-footer__list-item">
+                                <span class="text_blue text text_fw-600">OUR PARTNERS</span>
+                            </li>
+                            <li class="pre-footer__list-item pre-footer__list-item_logo">
+                                <div class="text_darken text_15">
+                                    <img src="./img/universal-mg-logo.svg" alt="universal logotype" />
+                                </div>
+                            </li>
+                            <li class="pre-footer__list-item pre-footer__list-item_logo">
+                                <div class="text_darken text_15">
+                                    <img src="./img/t-mobile-logo.svg" alt="t-mobile logotype" />
+                                </div>
+                            </li>
+                            <li class="pre-footer__list-item pre-footer__list-item_logo">
+                                <div class="text_darken text_15" href="">
+                                    <img src="./img/apple-logo.svg" alt="apple logotype" />
+                                </div>
+                                <div class="text_darken text_15" href="">
+                                    <img src="./img/sac-kings.svg" alt="sac kings logotype" />
+                                </div>
+                                <div class="text_darken text_15" href="">
+                                    <img src="./img/orlando-magic.svg" alt="orlando-magic logotype" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid main-footer pl-0 pr-0">
+            <footer class="container main-footer__wrap" key="B">
+                <div class="main-footer__rights">© 2018 CEEK VR INC. All rights reserved.</div>
+                <div class="main-footer__icons">
+                    <a target="_blank" href="https://www.facebook.com/ceekapp/" class="main-footer__icon"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://twitter.com/ceek" class="main-footer__icon"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/ceekvr/" class="main-footer__icon"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCkt5aX3nCQhdREFCeVYD92g" class="main-footer__icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <toast></toast>
+    <div ng-show="showLoading" class="fadescreen">
+        <div ng-show="showLoading" id="floatingCirclesG">
+            <div class="f_circleG" id="frotateG_01"></div>
+            <div class="f_circleG" id="frotateG_02"></div>
+            <div class="f_circleG" id="frotateG_03"></div>
+            <div class="f_circleG" id="frotateG_04"></div>
+            <div class="f_circleG" id="frotateG_05"></div>
+            <div class="f_circleG" id="frotateG_06"></div>
+            <div class="f_circleG" id="frotateG_07"></div>
+            <div class="f_circleG" id="frotateG_08"></div>
+        </div>
+    </div>
+
+<!--<script>
+    $('.navbar-nav>li>a').on('click', function () {
+        $('.navbar-collapse').collapse('hide');
+    });
+</script>-->

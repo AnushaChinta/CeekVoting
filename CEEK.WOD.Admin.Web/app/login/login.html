@@ -1,0 +1,141 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid #0e3de8;
+    }
+
+    .modal-open .modal {
+        background-color: white !important;
+    }
+
+    .media_con {
+        margin-top: 10%;
+    }
+
+    .media_h2 {
+        margin-left: 46%;
+    }
+
+    .media_form {
+        padding-left: 35%;
+        cursor: pointer;
+    }
+
+    .media_btn {
+        padding-left: 16%;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .media_con {
+            margin-top: 45%;
+        }
+
+        .media_h2 {
+            margin-left: 36%;
+        }
+
+        .media_form {
+            padding-left: 4%;
+            cursor: pointer;
+        }
+
+        .btn-w-icon {
+            width: auto;
+            padding-left: 28%;
+
+        }
+
+        .media_btn {
+            padding-left: 5%;
+        }
+    }
+</style>
+
+<div class="container media_con">
+
+    <h2 class="get-your-vr__header color-blue media_h2">SIGN IN</h2>
+    <form class="subscribe-news__form media_form" id="form" name="form" novalidate>
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input id="username" type="text" class="transp-input input" ng-click="MSG();" name="username" placeholder="Ceeker ID or Email" ng-model="username" maxlength="30" required>
+
+            </div>
+
+        </div>
+        <span style="color:red;" ng-show="submitted&&form.username.$error.required||form.username.$touched && form.username.$invalid"><b>Please enter username here</b></span>
+
+        <div class="row">
+            <div class="subscribe-news__input col-lg-6 col-md-6 col-sm-12" style="max-width: 25.75rem;">
+                <input id="password" type="password" class="transp-input input" ng-click="MSG();" placeholder="Password" ng-model="password" name="password" required>
+                <span style="color:red;" ng-show="submitted&&form.password.$error.required||form.password.$touched && form.password.$invalid"><b>Please enter password here</b></span>
+
+            </div>
+
+        </div>
+        <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;font-size:2.0vh;background:none;margin-top:2%;margin-left:14%;">
+            <b>{{message}}</b>
+        </div>
+        <div class="row media_btn">
+
+            <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                <a ng-click="submitted=true;login(form)" data-toggle="modal" data-target=".modal-artist" id="login" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                    <img class="get_more-w-icon__img" src="./img/icon.png" alt="icon lock"> <span class="btn-w-icon__text">&nbsp;login</span>
+                </a>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class="modal fade modal-artist" id="myModal" ng-show="showotppopup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif">
+        <div class="modal-content artist-modal">
+
+            <form role="form" id="form1" name="form1" novalidate>
+                <div class="row close-modal" data-dismiss="modal">
+                    <div class="col-12 pr-0 pl-0"><img src="img/Close.png" alt="" style="width:60%;"></div>
+                </div>
+
+                <h2 class="get-your-vr__header color-blue" style="margin-left: 20%;margin-top:2%;font-size:2rem;margin-bottom:8%">SIGN IN(2FA)</h2>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <p class="font-weight-bold mb-0 h5" style="margin-left: 3%;">Enter Google Authenticator OTP</p>
+
+                        <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12" style="padding-top: 1rem;">
+                            <input type="text" class="transp-input input" ng-click="msg1();" placeholder="AUTHENTICATOR OTP" id="pass" ng-model="otp" name="otp" ng-pattern="/^[0-9]*$/" required>
+                            <!--<span style="color:red;" ng-show="form1.otp.$touched && form1.otp.$invalid || submitted&&form1.otp.$error.required"><b>Please provide OTP</b></span>-->
+                            <span style="color:red" ng-show="form1.otp.$error.pattern"><b>Please enter only numbers</b></span>
+                            <span class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;background:none;margin-top:2%;">
+                                <b>{{message2}}</b>
+                            </span>
+                        </div>
+                        <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;font-size:2.0vh;background:none;margin-top:2%;margin-left:14%;">
+                            <b>{{message1}}</b>
+                        </div>
+                        <div class="row" style="padding-left:36%;">
+
+                            <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                                <a ng-click="submitted=true;submitotp(form1)" id="otp" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" style="max-width: 7.5rem;cursor:pointer;padding-left:15%;padding-right: 10%;">
+                                    <span class="btn-w-icon__text">Submit</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

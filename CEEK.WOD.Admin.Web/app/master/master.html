@@ -1,0 +1,510 @@
+﻿
+<style>
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fafafa;
+    }
+
+    .btn-info {
+        background-color: #5F5F5F;
+        border-color: white;
+    }
+
+        .btn-info:hover {
+            background-color: #5F5F5F;
+            border-color: white;
+        }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1.7em;
+        color: #999;
+    }
+
+    a,
+    a:hover,
+    a:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .navbar {
+        padding: 8px 10px;
+        background: #fff;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-btn {
+        box-shadow: none;
+        outline: none !important;
+        border: none;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed #ddd;
+        margin: 40px 0;
+    }
+
+    /* ---------------------------------------------------
+        SIDEBAR STYLE
+    ----------------------------------------------------- */
+
+    #sidebar {
+        width: 275px;
+        position: fixed;
+        top: 0;
+        left: -275px;
+        height: 100vh;
+        z-index: 999;
+        background: #2E37FE;
+        color: #fff;
+        transition: all 0.3s;
+        /*overflow-y: scroll;*/
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+        #sidebar.active {
+            left: 0;
+        }
+
+    #dismiss {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        background: #5F5F5F;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+        #dismiss:hover {
+            background: #fff;
+            color: #7386D5;
+        }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+        .overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        padding-bottom: 1px;
+        background: #6f6f6f;
+    }
+
+    #sidebar ul.components {
+        padding: 0px 0;
+        border-bottom: 1px solid #47748b;
+    }
+
+    #sidebar ul li {
+        padding: 0px 0;
+        border-bottom: 1px solid #758284;
+    }
+
+    #sidebar ul p {
+        color: #fff;
+        padding: 10px;
+    }
+
+    #sidebar ul li a {
+        padding: 4.5px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+            display: block;
+        }
+
+    #sidebar ul li.active > a,
+    a[aria-expanded="true"] {
+        color: #fff;
+        background: #2E37FE;
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    ul ul a {
+        font-size: 0.9em !important;
+        padding-left: 30px !important;
+        background: #2E37FE;
+    }
+
+    ul.CTAs {
+        padding: 20px;
+    }
+
+        ul.CTAs a {
+            text-align: center;
+            font-size: 0.9em !important;
+            display: block;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+    a.download {
+        background: #fff;
+        color: #7386D5;
+    }
+
+    a.article,
+    a.article:hover {
+        background: #6d7fcc !important;
+        color: #fff !important;
+    }
+
+    /* ---------------------------------------------------
+        CONTENT STYLE
+    ----------------------------------------------------- */
+
+    #content {
+        width: 100%;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.3s;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .modal-backdrop {
+        position: inherit !important;
+    }
+
+    .modal-open .modal {
+        background-color: white !important;
+    }
+
+    .media_header {
+        margin-left: 38%;
+        color: lavender;
+    }
+
+    .media_wrap {
+        margin-top: 5.4%;
+        overflow-x: scroll;
+    }
+    .media_enable{
+        margin:0px 5px;
+    }
+
+   @media only screen and (min-width: 320px) and (max-width:790px) {
+        .media_header {
+            margin-left: 18%;
+            color: lavender;
+        }
+
+        .media_wrap {
+            margin-top: 18.4%;
+            overflow-x: scroll;
+        }
+         .media_enable{
+        margin:10px 5px;
+    }
+    }
+</style>
+
+
+<nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark pl-4 pr-4 fixed-top main-header">
+    <a class="navbar-brand logo_white" target="_blank" href="https://www.ceek.com/"><img src="img/ceek-logo.svg" alt="" style="width:50px"></a>
+    <a class="navbar-brand logo_blue" target="_blank" href="https://www.ceek.com/"><img src="img/ceek-logo-blue-logo.svg" alt="" style="width:50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <button type="button" id="sidebarCollapse" class="btn btn-info" ng-show="isAuth">
+        <i class="fas fa-align-left"></i>
+        <span></span>
+    </button>
+    <h2 class="align-self-center media_header" ng-show="!isAuth">CEEK ADMIN</h2>
+    <!--<div class="row" ng-show="isAuth  && noOfEvents>1">
+        <div class="col-lg-3 col-md-4 col-sm-4">
+        <span  style="color:white"> Events:</span>
+           </div>
+          <div class="col-lg-9 col-md-10 col-sm-10" >
+           <select class="form-control" style="background-color: #606060;color:white;" data-toggle="dropdown" id="ddlproject" data-ng-model="selectedEvent" data-ng-options="e.event_name for e in eventList" ng-change="EventChanged()"></select>
+            </div>
+    </div>-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-show="isAuth">
+        <ul class="navbar-nav m-auto" ng-show="isAuth">
+            <li class="nav-item active align-self-center">
+                <a class="nav-link pr-3">Events:</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link pr-3">
+                    <select class="btn btn-outline-light" data-toggle="dropdown" id="ddlproject" data-ng-model="selectedEvent" data-ng-options="e.event_name for e in eventList" ng-change="EventChanged()"></select>
+
+                </a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link pr-3" href="/#!/nomination" data-toggle="collapse" data-target=".navbar-collapse.show">NOMINATIONS</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link pr-3" href="/#!/artist" data-toggle="collapse" data-target=".navbar-collapse.show">ARTISTS</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link pr-3" href="/#!/artistInfo" data-toggle="collapse" data-target=".navbar-collapse.show">NEW ARTIST</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link pr-3" href="/#!/cryptoshop" data-toggle="collapse" data-target=".navbar-collapse.show">PLANS</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link pr-3" href="/#!/cryptoInfo" data-toggle="collapse" data-target=".navbar-collapse.show">NEW PLAN</a>
+            </li>
+
+
+           
+        </ul>
+
+        <ul class="navbar-nav mr-0">
+          
+            <li class="nav-item align-self-center media_enable" ng-show="isAuth">
+                <!--<a class="nav-link pr-3" href="/#!/qrcode">ENABLE2FA</a>-->
+                <button type="button" ng-show="isenable2fa" class="btn btn-outline-light btn1" ng-click="enable2fa();" style="line-height: 1.45;color:white;border-radius: .4375rem;border: 2px solid #71bdff;box-shadow: 0 0 0.5rem #2e37fe;background-image: linear-gradient(252deg,#71bdff,#151cbf);">
+                    <!--<img class="get_more-w-icon__img" src="./img/lock-icon.png" alt="icon lock" width="12">--> ENABLE 2FA
+                </button>
+                <button type="button" ng-show="disable2fa" class="btn btn-outline-light btn1" ng-click="disable();" style="line-height: 1.45;color:white;border-radius: .4375rem;border: 2px solid #71bdff;box-shadow: 0 0 0.5rem #2e37fe;background-image: linear-gradient(252deg,#71bdff,#151cbf);">
+                    <!--<img class="get_more-w-icon__img" src="./img/lock-icon.png" alt="icon lock" width="12">--> DISABLE 2FA
+                </button>
+            </li>
+            <li class="nav-item" ng-show="isAuth">
+                <button type="button" id="logout" class="btn btn-outline-light" ng-click="Logout();">LOGOUT</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="media_wrap">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <h6>{{username}}</h6>
+            <h6>{{email}}</h6>
+
+        </div>
+
+        <ul class="list-unstyled components">
+
+            <li>
+
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-users" aria-hidden="true" style="margin-right:5%;"></i>Admin</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li id="user">
+                        <a href="/#!/user">Admins</a>
+                    </li>
+                    <li id="userInfo">
+                        <a href="/#!/userInfo">New Admin</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-calendar-o" aria-hidden="true" style="margin-right:5%;"></i>Event</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li id="event">
+                        <a href="/#!/event">Events</a>
+                    </li>
+                    <li id="eventInfo">
+                        <a href="/#!/eventInfo">New Event</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li id="dashboard">
+
+                <a href="/#!/dashboard"><i class="fa fa-exchange" style="margin-right:5%;" aria-hidden="true"></i>Transaction dashboard</a>
+
+
+            </li>
+            <li id="eventdashboard">
+
+                <a href="/#!/eventdashboard"><i class="fa fa-dashboard" style="margin-right:5%;" aria-hidden="true"></i>Events dashboard</a>
+            </li>
+
+            <li id="BCT">
+
+                <a href="/#!/blockchaintranscation"><i class="fa fa-link" style="margin-right:5%;" aria-hidden="true"></i>Blockchain Transcation</a>
+            </li>
+            <li id="pagecontent">
+
+                <a href="/#!/pageContent"><i class="fa fa-file-text-o" aria-hidden="true" style="margin-right:5%;"></i>Page Content</a>
+            </li>
+            <li id="Setting">
+
+                <a href="/#!/setting"><i class="fa fa-cogs" aria-hidden="true" style="margin-right:5%;"></i>Settings</a>
+            </li>
+            <!--<li id="ChangePassword">
+
+                <a href="/#!/changepassword"><i class="fa fa-lock" aria-hidden="true" style="margin-right:5%;"></i>Change Password</a>
+            </li>-->
+
+        </ul>
+
+
+    </nav>
+</div>
+
+<div class="overlay"></div>
+
+<!--<div class="container-fluid pl-0 pr-0 body-header" ng-show="isAuth">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">VOTING</p>
+</div>-->
+<!--<div class="container-fluid pl-0 pr-0 body-header" ng-show="!isAuth">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">VOTING</p>
+</div>
+<div class="container-fluid pl-0 pr-0 body-banner" ng-show="!isAuth">
+</div>
+<div class="container" ng-show="!isAuth">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">Vote for your favorite show</p>
+    <p class="text-center font-weight-normal mb-4 pl-md-5 pr-md-5 txt-normal">
+        Lorem spicy jalapeno bacon ipsum dolor amet mollit jowl bacon sunt turducken.
+        Ut spare ribs andouille venison occaecat do ut pork pork belly nulla elit mignon.
+    </p>
+    <a href="/#!/artist"><img src="img/idol.png" class="rounded img-fluid p-3" alt=""></a>
+    <a href="/#!/artist"><img src="img/movie.png" class="rounded img-fluid p-3" alt=""></a>
+    <a href="/#!/artist"><img src="img/vma.png" class="rounded img-fluid p-3" alt=""></a>
+
+</div>-->
+<!--INNER CONTENT HERE-->
+<div role="main">
+    <ui-view></ui-view>
+</div>
+
+<div class="container-fluid footer-background pl-0 pr-0">
+
+
+</div>
+
+<toast></toast>
+<div ng-show="showLoading" class="fadescreen">
+    <div ng-show="showLoading" id="floatingCirclesG">
+        <div class="f_circleG" id="frotateG_01"></div>
+        <div class="f_circleG" id="frotateG_02"></div>
+        <div class="f_circleG" id="frotateG_03"></div>
+        <div class="f_circleG" id="frotateG_04"></div>
+        <div class="f_circleG" id="frotateG_05"></div>
+        <div class="f_circleG" id="frotateG_06"></div>
+        <div class="f_circleG" id="frotateG_07"></div>
+        <div class="f_circleG" id="frotateG_08"></div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    //$("#sidebar").mCustomScrollbar({
+    //    theme: "minimal"
+    //});
+
+    $('#dismiss, .overlay').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+
+    $('#user').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+    $('#userInfo').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#event').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+    $('#eventInfo').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#dashboard').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+    $('#eventdashboard').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#BCT').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+    $('#Setting').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#ChangePassword').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#pagecontent').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+    $('#logout').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+
+</script>
+

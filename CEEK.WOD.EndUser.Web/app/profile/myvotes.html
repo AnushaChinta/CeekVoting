@@ -1,0 +1,68 @@
+﻿<style>
+    .artist {
+        width: 75%;
+        /*height: 56px;*/
+        -webkit-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+        -moz-box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+        box-shadow: -5px -5px 0px 0px rgba(46,55,254,1);
+    }
+
+    .text-artist {
+        line-height: 0;
+        top: 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .artist {
+            width: 90px;
+        }
+
+        .table td {
+            padding: 0.75rem 0 0.75rem 0;
+        }
+
+        .tdnum {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .prog-bar {
+            width: 140px;
+        }
+    }
+</style>
+<div class="container-fluid pl-0 pr-0 body-header">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;">VOTING</p>
+</div>
+<div class="container-fluid pl-0 pr-0 artist-banner">
+    <img ng-src="{{eventimg}}" class="artist-banner" alt="">
+</div>
+<div class="container" style="margin-top:12%;">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">{{event_name}}</p>
+    <p class="text-center font-weight-bold txt-normal"> MY VOTES: {{myvotemodel.totaluservotes}}</p>
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    <div class="error1" style="background:none;color:red;margin-left:37%;color:red;font-size:3.25vh;">
+        <b>{{message1}}</b>
+    </div>
+    <div class="table-responsive">
+        <table class="table" style="font-family: Segoe UI,sans-serif;">
+            <tr ng-repeat="x in myvotemodel">
+                <td class="align-middle text-center font-weight-bold" style="width:10%">{{x.artistrank}}</td>
+                <td class="align-middle" style="width:15%"><img ng-src="{{x.fullimageurl}}" class="artist" alt=""></td>
+                <td class="align-middle pl-2" style="width:45%">
+                    <p class="font-weight-bold mb-0 text-artist">{{x.participants[0].fullname}}</p><br>
+                    <div class="progress prog-bar" style="font-size:3rem;">
+                        <progress value="{{x.artistvotesperc}}" role="progressbar" style="background-color:blue" class="progress-bar bg-medal-3" max="100"></progress>
+                        <!--<div class="progress-bar bg-medal-3" role="progressbar" value="{{x.artistvotesperc}}" style="width: 95%" aria-valuenow="{{x.artistvotesperc}}" aria-valuemin="0" aria-valuemax="100"></div>-->
+                    </div>
+                </td>
+                <td class="align-middle" style="width:15%"><p class="font-weight-bold mb-0 votes">{{x.numberofvotes}} Votes</p></td>
+                <!--<td class="align-middle" style="width:15%"><a href="" ng-click="openArtistPopup(x);" class="btn btn-ceek" data-toggle="modal" data-target=".modal-artist"><img src="img/coin.png" style="width:16px"> Vote</a></td>-->
+            </tr>
+
+        </table>
+    </div>
+</div>
+

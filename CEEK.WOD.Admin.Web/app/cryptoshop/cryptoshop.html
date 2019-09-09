@@ -1,0 +1,149 @@
+﻿<!--<div class="container-fluid pl-0 pr-0 body-header"   style="margin-top:8px;">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light">{{event_name}}</p>
+</div>-->
+<!--<div class="container-fluid pl-0 pr-0 artist-banner">
+</div>-->
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">CRYPTO SHOP</p>
+    <hr style="border-bottom: 1px solid;" />
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>
+    <div style="background:none;color:red;margin-left:37%;color:red;font-size:3.25vh;">
+        <b>{{message1}}</b>
+    </div>
+    <div class="row" style="font-family: Segoe UI,sans-serif;">
+        <div class="col-md-4 item" ng-repeat="x in packageList">
+            <img ng-src="{{x.fullimageurl}}" style="background: url('img/Plans_placeholder.png') no-repeat center;  height:66%; background-size:contain;"  class="artist aspect img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">{{x.packageName}}</p><br>
+                 
+                   
+                    <!--<span class="text-buy">{{x.packageDesc}}</span>-->
+                </div>
+
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a ng-click="Edit(x);" style="color:white;" class="btn btn-ceek"><b>Edit</b></a>
+                </div>
+                <p class="text-rigth font-weight-bold mb-0 text-white h6">{{x.packageDesc}}</p>
+            </div>
+        </div>
+        <!--<div class="col-md-4 item">
+            <img src="img/artist-2.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Lil Yatchty</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-3.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Snoop Dogg</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-4.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Drake</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-5.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Kanye West</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-6.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Jennifer Lopez</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-7.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Pharrell Williams</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-8.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">The Killers</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 item">
+            <img src="img/artist-9.png" class="artist img-fluid" alt="">
+            <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0">
+                <div class="col-8 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">U2</p>
+                </div>
+                <div class="col-4 text-right pl-0 pr-0">
+                    <a href="/#!/artistInfo" class="btn btn-ceek">Edit</a>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+<!--<div class="modal fade modal-artist" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;">
+        <div class="modal-content artist-modal">
+
+            <div class="row close-modal" data-dismiss="modal">
+                <div class="col-12 pr-0 pl-0"><img src="img/Close.png" alt="" style="width:32px;"></div>
+            </div>
+            <img src="img/artist-2.png" class="img-fluid" alt="">
+            <div class="row text-modal pl-2 pr-2 pb-2 mr-0 ml-0">
+                <div class="col-12 pl-0 pr-0">
+                    <p class="text-rigth font-weight-bold mb-0 text-white h5">Lil Yatchty</p>
+                    <p class="text-white font-weight-light h4">Number of votes</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="1000" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <a href="#" class="btn btn-ceek">Vote</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row bg-color-ceek p-2 ml-3 mr-3">
+                <div class="col-12"><p class="text-white text-center mb-0"><img src="img/coin.png" width="16" alt=""> 9999 Coins <a href="#" class="">BUY MORE</a></p></div>
+            </div>
+        </div>
+    </div>
+</div>-->

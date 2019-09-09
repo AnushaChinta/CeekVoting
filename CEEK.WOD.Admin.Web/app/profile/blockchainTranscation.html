@@ -1,0 +1,246 @@
+﻿<style>
+    input::-webkit-input-placeholder {
+        color: white !important;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+        color:white !important;
+    }
+
+    input::-moz-placeholder { /* Firefox 19+ */
+        color: white !important;
+    }
+
+    input:-ms-input-placeholder {
+        color: white !important;
+    }
+
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid white;
+    }
+
+    .icon {
+        background-repeat: no-repeat;
+        background-image: url('../../img/calender.jpg');
+        background-position: 22vh 1.5vh;
+    }
+
+
+    .ui-datepicker {
+        width: 14em;
+    }
+
+    label {
+        background-color: #243148;
+        color: white;
+    }
+
+    .w3-btn, .w3-button {
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .w3-btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+    .w3-btn, .w3-button {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+    table td {
+        width: 100px;
+        word-wrap: break-word;
+        max-width: 220px;
+    }
+
+    .media_bc_dash {
+        margin-top: 0rem;
+        border-radius: 54px;
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .media_t {
+        color: white;
+        font-size: 17px;
+        margin-top: 12px;
+        float: right;
+    }
+
+     @media only screen and (min-width: 320px) and (max-width:790px) {
+        table td {
+            width: 100px;
+            word-wrap: break-word;
+            max-width: 220px;
+            font-size: 0.8rem;
+        }
+
+        .media_bc_dash {
+            margin-top: 0rem;
+            border-radius: 13px;
+            margin-left: 5%;
+            width: 90%;
+        }
+         .media_t {
+        color: white;
+        font-size: 17px;
+        margin-top: 12px;
+        float: none;
+    }
+    }
+
+    .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+    }
+
+        .w3-disabled *, :disabled * {
+            pointer-events: none;
+        }
+
+        .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
+            box-shadow: none;
+        }
+
+    .w3-black, .w3-hover-black:hover {
+        color: #fff !important;
+        background-color: #000 !important;
+    }
+</style>
+
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header" style="font-size:1.9rem;">Blockchain Transactions</p>
+<hr style="border-bottom: 1px solid; width:18%;" />
+
+<div class="container-fluid pl-0 pr-0 body-header media_bc_dash " style="">
+    <p class="text-center font-weight-bold mb-0 pt-0 text-light">
+
+        <form class="subscribe-news__form" id="form" name="form" novalidate>
+            <div class="row">
+
+                <div class="subscribe-news__input col-md-2 align-self-center">
+                    <span class="media_t">Transcation Type:</span>
+                </div>
+
+                <div class="subscribe-news__input col-md-1" style="margin-top:8px;">
+                    <select class="btn btn-outline-light" data-toggle="dropdown" id="ddlproject" data-ng-model="selectedtranstype" data-ng-options="e.value for e in transcationlist"></select>
+
+                </div>
+                <div class="subscribe-news__input col-md-1 align-self-center" style="margin-top:9px;">
+                    <span style="color:white;font-size:20px;padding-left: 7px;">Status:</span>
+                </div>
+                <div class="subscribe-news__input col-md-1" style="margin-top:8px;">
+                    <select class="btn btn-outline-light" data-toggle="dropdown" id="ddlproject" data-ng-model="selectedstatus" data-ng-options="e.value for e in statuslist"></select>
+
+                </div>
+                <div class="subscribe-news__input col-md-3">
+                    <input type="text" style="color:white" name="fname" id="fname" class="transp-input input" ng-model="address" placeholder="Search by address" required>
+                    <span style="color:red" ng-show="form.fname.$touched && form.fname.$invalid || submitted&&form.fname.$error.required"><b>Address required</b></span>
+
+
+                </div>
+
+                <div ng-click="submitted=true;submit(form)" class="subscribe-news__input col-md-2" style="cursor:pointer">
+                    <a id="login" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" style="width:6em;">
+                        <span class="btn-w-icon__text">Search</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </form>
+    </p>
+</div>
+
+
+<div class="container" style="margin-top:50px;overflow-x: scroll;">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>From Address</th>
+                <th>To Address</th>
+                <th>TranscationHash</th>
+                <th>Tokens</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="x in blockchainListmodel">
+
+            <tr>
+                <td width="30%" style="text-decoration:underline;cursor:pointer;" ng-click="from_address(x)">{{x.from_address}}</td>
+                <td style="text-decoration:underline;cursor:pointer;" ng-click="to_address(x)">{{x.to_address}}</td>
+                <td style="max-width:250px;cursor:pointer;text-decoration:underline" ng-click="hash(x)">{{x.transactionhash}}</td>
+                <td>{{x.tokens}}</td>
+                <td>
+                    {{x.status}}
+                    <img src="../../img/error.png" style="width:10%;cursor:pointer;" data-toggle="modal" data-target=".modal-artist" ng-click="errormsg(x)" ng-show="showimg">
+
+                    <span class="tooltiptext">{{x.error}}</span>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="w3-show-inline-block" style="margin-right:12%;float:right;">
+        <div class="w3-bar">
+            <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!enablePrevPage"
+                    ng-click="prevPage()">
+                <<
+            </button>
+
+            <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal">Page:<b style="color:white;font-size:18px"> {{ pageno }} &nbsp; </b></label>
+            <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!enableNextPage"
+                    ng-click="nextPage()">
+                >>
+            </button>
+
+        </div>
+    </div>
+
+    <div style="background:none;color:red;font-size:3.25vh;margin-left:40%;">
+        <span>{{message}}</span>
+    </div>
+</div>
+
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" ng-show="showVoteThanksPopUp" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;">
+        <div class="modal-content artist-modal" style="max-width:100%;min-width:69%;margin-top:8%;padding-bottom:0px;">
+
+
+            <div class="row close-modal" data-dismiss="modal">
+                <div class="col-12 pr-0 pl-0"><img src="img/Close.png" alt="" style="width:32px;"></div>
+            </div>
+
+            <div class="row bg-color-ceek p-2 ml-3 mr-3" style="width:350px;top:197px;">
+
+                <p style="word-wrap:break-word;top:28%;padding-left:4%;width:90%;color:white">{{error}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

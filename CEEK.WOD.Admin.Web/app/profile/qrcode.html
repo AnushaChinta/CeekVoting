@@ -1,0 +1,107 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid #0e3de8;
+    }
+    .media_p{
+       font-size:2rem;
+    }
+
+     .media_p1{
+     margin-left: 27%;
+    }
+     .media_qr{
+       margin-left:35%;margin-top:2%;
+     }
+
+     .media_btn{
+         padding-left:10%;
+     }
+
+     .media_form2{
+         padding-left:35%;
+     }
+
+     .media_btn2{
+         padding-left:12%;
+     }
+
+
+    @media screen and (max-width: 415px) {
+       .media_p{
+       font-size:1.5rem;
+     }
+         .media_p1{
+     margin-left: 10%;
+     }
+          .media_qr{
+       margin-left:17%;margin-top:16%;
+     }
+          .media_btn{
+         padding-left:20%;
+     }
+          .media_form2{
+         padding-left:0%;
+     }
+           .media_btn2{
+         padding-left:26%;
+     }
+    }
+</style>
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header media_p"> 
+        Enable 2FA with Google Authenticator
+    </p>
+    <hr style="border-bottom: 1px solid;width:38%;" />
+    <!--<h2 class="get-your-vr__header color-blue" style="margin-left: 29%;">Enable 2FA with Google Authenticator</h2>-->
+    <p class="font-weight-bold mb-0 h5 media_p1" ng-show="level1">Scan the BarCode for Google Authenticator OTP</p>
+
+       <div class="media_qr" ng-show="level1">
+     
+       <div class="row" style="margin-left:4%;">
+           <div class="col-lg-3 col-md-6 col-sm-12">
+           <img  ng-src="{{qrcode}}" alt="QRcode">
+               </div>
+       </div>
+          
+        <div class="row media_btn">
+
+            <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                <a ng-click="next();" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" style="cursor:pointer; max-width: 6.5rem;">
+                     <span class="btn-w-icon__text">&nbsp;Next</span>
+                </a>
+            </div>
+        </div>
+           
+       </div>
+    <form class="subscribe-news__form media_form2" id="form" name="form" novalidate>
+        <p class="font-weight-bold mb-0 h5" ng-show="level2">Enter Google Authenticator OTP</p>
+        <div ng-show="level2">
+            <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                <input type="text" ng-click="msg();" class="transp-input input" placeholder="AUTHENTICATOR OTP"  ng-model="otp" name="otp" id="otp" ng-pattern="/^[0-9]*$/" required>
+                <span style="color:red;" ng-show="submitted&&form.otp.$error.required||form.otp.$touched && form.otp.$invalid"><b>Please provide OTP</b></span>
+                <span style="color:red" ng-show="form.otp.$error.pattern"><b>Please enter only numbers</b></span>
+
+            </div>
+            <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;font-size:2.0vh;background:none;margin-top:2%;margin-left:9%;">
+                <b>{{change2fastatusError}}</b>
+            </div>
+            <div class="titulo type2_titulo_top align-self-center align-content-center" style="color:red;font-size:2.0vh;background:none;margin-top:2%;margin-left:3%;">
+                <b>{{message1}}</b>
+            </div>
+            <div class="row media_btn2">
+
+                <div class="subscribe-news__input col-lg-3 col-md-6 col-sm-12">
+                    <a ng-click="submitted=true;submit(form)" id="create" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" style="max-width: 7.5rem;cursor:pointer;">
+                        <span class="btn-w-icon__text">&nbsp;Submit</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>

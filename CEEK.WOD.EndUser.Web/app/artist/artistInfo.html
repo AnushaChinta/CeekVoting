@@ -1,0 +1,721 @@
+﻿  
+<style>
+    .music-exp-single__describe > h2 {
+        word-spacing: 2px;
+    }
+
+    .text_titilium-web {
+        font-family: Titillium Web,sans-serif;
+    }
+
+    .text_50 {
+        font-size: 3.125rem;
+    }
+
+    .text_dark-blue {
+        color: #2e37fe;
+    }
+
+    .music-exp-single__describe .music-exp-single__content * {
+        font-family: Titillium Web,sans-serif !important;
+    }
+    .footer{
+    margin-top: -29.5%;
+    margin-right: 0px;
+    position: absolute;
+   
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    color: #f1f1f1;
+    width: 99.8vw;
+    padding: 52px 52px 113px 52px;
+    }
+    @media screen and (max-width: 1600px) {
+        .music-exp-single {
+            margin-bottom: 6.875rem;
+        }
+    }
+
+    .music-exp-single {
+        max-width: 88.625rem;
+        margin: 1.875rem 2rem 11.9375rem;
+    }
+
+    @media screen and (max-width: 1400px) {
+        html {
+            font-size: 15px;
+        }
+    }
+
+    .music-exp-single__describe {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .music-exp-single__describe {
+            width: 100% !important;
+        }
+
+        .music-exp-single {
+            margin-top: 0;
+        }
+
+        .text_50 {
+            font-size: 2rem !important;
+        }
+
+        .text_40 {
+            font-size: 2rem !important;
+        }
+
+        video {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        iframe {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        audio {
+            width: 100% !important;
+        }
+
+        .vcss {
+            margin-top: 17% !important;
+        }
+
+        .heart {
+            right: -32px !important;
+            bottom: 26px !important;
+            margin-top: 11% !important;
+        }
+
+        .parent > a {
+            right: 83px !important;
+            bottom: 28px !important;
+        }
+
+        /*.cls {
+            padding: 6% !important;
+            bottom: 425px !important;
+        }*/
+        .pics {
+            margin-bottom: -10% !important;
+        }
+
+        .morenext {
+           bottom: 230px !important;
+           left: 13px !important;
+           width: 11% !important;
+        }
+        .moreprev {
+     right: 0px !important;
+    width: 11% !important;
+    bottom: 230px !important;
+    }
+    }
+
+    
+
+    @media screen and (max-width: 1300px) {
+        .music-exp-single {
+            margin-top: 3.125rem;
+            margin-bottom: 3.125rem;
+        }
+    }
+
+    /*video {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }*/
+
+    .text_40 {
+        font-size: 2rem;
+    }
+
+    audio {
+        width: 100%;
+    }
+
+    .parent > a {
+        opacity: 0.3;
+        position: relative;
+        float: right;
+        right: 87px;
+        bottom: 671px;
+        transition: 0.5s;
+    }
+
+    .parent > a, i {
+        opacity: 1;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    .heart {
+        position: relative;
+        /* float: left; */
+        left: 15px;
+        /* bottom: 41px; */
+        transition: 0.5s;
+        cursor: pointer;
+        margin-top: 2%;
+    }
+
+    .parent {
+        margin-top: 5%;
+    }
+
+    .type {
+        position: relative;
+        right: -11px;
+        /*bottom: 94px;*/
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .name {
+        position: relative;
+        right: -11px;
+        /*bottom: 92px;*/
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    wave {
+        border: none !important;
+    }
+
+    #waveform_box {
+        margin-top: -14%;
+    }
+
+    .view-more {
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: .125rem;
+        word-spacing: .125rem;
+        position: relative;
+    }
+
+    .music-exp-single .watch-ceek-app {
+        flex-shrink: 0;
+        align-self: flex-start;
+        max-width: 18.75rem;
+        border-radius: .625rem;
+        padding: 0 0 17px;
+        background-color: hsla(0,0%,69%,.1);
+    }
+
+    .watch-ceek-app, .watch-ceek-app__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .watch-ceek-app {
+        align-items: center;
+        max-width: 217px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        html {
+            font-size: 15px;
+        }
+    }
+
+    .music-exp-single .watch-ceek-app > p {
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .text_titilium-web {
+        font-family: Titillium Web,sans-serif;
+    }
+
+    .text_24 {
+        font-size: 1.5rem;
+    }
+
+    .text_silver-chalice {
+        color: #b1b1b1;
+    }
+
+    .music-exp-single .watch-ceek-app__body a:first-child {
+        justify-content: center;
+        height: 53px;
+        text-align: center;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        padding: 0 7px;
+    }
+
+    .music-exp-single .watch-ceek-app__body a {
+        max-width: 13rem;
+        min-height: 0;
+        margin-bottom: 10px;
+        text-decoration: none;
+    }
+
+    .watch-ceek-app__body > a {
+        width: 100%;
+        max-width: 18rem;
+        min-height: 5rem;
+        display: flex;
+        text-decoration: none;
+    }
+
+    .btn-w-icon_border-malibu {
+        border: 2px solid #71bdff;
+    }
+
+    .btn-w-icon_blue-gradient {
+        border: none;
+        box-shadow: 0 0 0.5rem #2e37fe;
+        background-image: linear-gradient(252deg,#71bdff,#151cbf);
+    }
+
+    .btn-w-icon {
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        /*background: transparent;*/
+        outline: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        max-width: 11.25rem;
+        width: 100%;
+        height: 50px;
+        border-radius: .4375rem;
+        justify-content: flex-start;
+        font-size: 1.125rem;
+        color: #fff;
+        font-weight: 400;
+        padding-left: 15px;
+    }
+
+    .btn-w-icon, .notification * {
+        font-family: Titillium Web,sans-serif;
+    }
+
+    .btn-oculus > img.btn-download__img {
+        max-height: 26px;
+        margin: 0 18px 0 24px;
+    }
+
+    @media (min-width: 1400px) {
+        .text-artist {
+               width: 85% !important;
+        }
+    }
+</style>
+<style>
+   
+    :root {
+        --gutter: 20px;
+    }
+
+    .app {
+        padding: var(--gutter) 0;
+        display: grid;
+        grid-gap: var(--gutter) 0;
+        grid-template-columns: var(--gutter) 1fr var(--gutter);
+        align-content: start;
+    }
+
+        .app > * {
+            grid-column: 2 / -2;
+        }
+
+        .app > .full {
+            grid-column: 1 / -1;
+        }
+    
+    .hs {
+        display: grid;
+        grid-gap: calc(var(--gutter) / 2);
+        grid-template-columns: 10px repeat(6, calc(33% - var(--gutter) * 2)) 10px;
+        grid-template-rows: minmax(150px, 1fr);
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        padding-bottom: calc(.75 * var(--gutter));
+        margin-bottom: calc(-.5 * var(--gutter));
+    }
+
+        .hs:before,
+        .hs:after {
+            content: '';
+        }
+
+    /* Hide scrollbar */
+    .hide-scroll {
+        width:100%;
+        overflow-y: hidden;
+        margin-bottom: calc(-.1 * var(--gutter));
+    }
+
+
+    /* Demo styles */
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    /*body {
+        display: grid;
+        place-items: center;
+    }*/
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    .app {
+        width: 375px;
+        height: 667px;
+        background: #DBD0BC;
+        overflow-y: scroll;
+    }
+
+    .hs > li,
+    .item {
+        scroll-snap-align: center;
+        padding: calc(var(--gutter) / 2 * 1.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /*background: #fff;*/
+        border-radius: 8px;
+    }
+</style>
+
+<div class="container-fluid pl-0 pr-0 artist-banner banner" style="margin-top:7%;">
+    <img ng-src="{{fullheaderimageurl}}" class="artist-banner" alt="" style="min-height:750px;max-height:750px;">
+</div>
+<!--<img src="{{fullheaderimageurl}}" class="artist-banner" alt="">-->
+<div class="container bancont" style="margin-top:37%;">
+    <section class="music-exp-single">
+
+        <div class="row">
+            <div class="col-md-8 music-exp-single__describe">
+                <div class="row col-12" style="flex:none;">
+                    <h2 class="text_50 text_titilium-web text_dark-blue mb_0 mt_0">{{artistmodel.fullname}}</h2>
+                    <i class="fas fa-heart fa-2x heart" style="color:blue" ng-if="showfav"></i>
+                    <i class="fa fa-heart-o fa-2x heart" aria-hidden="true" ng-if="showfav1" ng-click="addfavourite();" data-toggle="modal" data-target=".modal-artist"></i>
+
+                </div>
+                <!--<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="font-size:14.0pt">{{artistmodel.description}}</span></span></p>-->
+
+                <div class="text_20 music-exp-single__content mt_0 mt_0 mb_0">
+                    <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="font-size:14.0pt" ng-bind-html="artistmodel.bio"></span></span></p>
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 watch-ceek-app">
+                <p class="text_titilium-web text_silver-chalice text_24">
+                    Vote for {{artistmodel.fullname}}
+                </p>
+                <div class="watch-ceek-app__body">
+                    <a data-toggle="modal" ng-click="openArtistPopup();" data-target=".modal-artist" style="background-color:blue;border: 2px solid #71bdff;" class="btn-w-icon get-vr__btn_less-on-small btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                        <img src="img/coin.png" alt="image" style="width:18px">
+                        <span class="btn-w-icon__text" style="margin-left: 4%;">VOTE</span>
+                    </a>
+                    <p class="text_titilium-web text_silver-chalice text_24">
+                        Watch it on CEEK app
+                    </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.ceek.virtualrealityconcerts" target="_blank"><img src="../../img/googleplay-btn.svg" /></a>
+                    <a href="https://itunes.apple.com/us/app/ceek-virtual-reality/id1169054349" target="_blank"><img src="../../img/appstore-btn.svg" width="100%" /></a>
+                    <!--<a href="https://play.google.com/store/apps/details?id=com.ceek.virtualrealityconcerts" class="btn-w-icon btn-download btn-googleplay btn-w-icon_long ">
+                    <img class="btn-w-icon__img btn-download__img" src="img/googleplay-icon.png" style="width:18px" alt="icon googleplay"><div class="btn-w-icon__text btn-download__text-box"><span class="btn-download__pre-text">GET IT ON</span><span class="btn-download__name">Google Play</span></div>
+                    </a>-->
+                    <!--<a href="https://itunes.apple.com/us/app/ceek-virtual-reality/id1169054349" class="btn-w-icon btn-download btn-appstore btn-w-icon_long "><img class="btn-w-icon__img btn-download__img" src="img/appstore-icon.png" style="width:18px" alt="icon appstore"><div class="btn-w-icon__text btn-download__text-box"><span class="btn-download__pre-text">Download on the</span><span class="btn-download__name">App Store</span></div>
+                    </a>-->
+                    <a href="https://www.oculus.com/experiences/rift/1934751373225464/" target="_blank" class="btn-w-icon btn-download btn-oculus btn-w-icon_long " style="background-color:black;max-width:14rem;">
+                        <img class="btn-w-icon__img btn-download__img" src="img/oculus-icon.png" alt="icon oculus"><div class="btn-w-icon__text btn-download__text-box">
+                            <span class="btn-download__name">Oculus</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <h4 class="text_40 text_titilium-web text_dark-blue mb_0 mt_0" ng-show="hvideos">Videos</h4>
+
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+            <div class="full hide-scroll" ng-show="hvideos">
+                <ul class="hs vid" id="content">
+                    <li class="item" ng-repeat="videos in popupvideo.videoarray" style="display:block;">
+
+                        <iframe ng-show="videos.isyoutubelink" width="270" height="170" ng-src="{{videos.fullvideourl}}"
+                                frameborder="0" allowfullscreen></iframe>
+
+
+                        <video ng-show="!videos.isyoutubelink" ng-src="{{videos.fullvideourl}}" height="190" width="270" controls style="margin-top: -8%;"></video>
+
+                    </li>
+
+                </ul>
+
+                </div>
+            <button class="w3-button w3-display-left w3-black Vprev" ng-show="showvideoprev" id="videoleft-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: left;bottom: 170px; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+            <button class="w3-button w3-display-right w3-black Vnext" ng-show="showvideonext" id="videoright-button" style="height:9%;padding:1%; border: none;left:94%;border-radius:50%;color: blue; position: relative;float: right;bottom: 170px; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+
+            </div>
+
+
+
+        <h4 class="text_40 text_titilium-web text_dark-blue mb_0 mt_0" ng-show="hphotos" style="margin-bottom: 3%;margin-top:3%;">
+            Photos
+        </h4>
+
+
+        <div class="row">
+            <div class="full hide-scroll" ng-show="hphotos" >
+                <ul class="hs" id="content1">
+                    <li class="item" ng-repeat="images in popupImage.imagearray">
+                        <img src="{{images.fullimageurl}}" class="artist aspect img-fluid" alt="">
+                       
+                        <div class="row text-artist pl-3 pr-3 pb-2 mr-0 ml-0" style="top: -30px;width:100%;">
+                            <div class="col-8 pl-0 pr-0">
+                                <p class="text-rigth font-weight-bold mb-0 text-white h5 name" style="cursor:pointer;">{{artistmodel.fullname}}</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+              
+            </div>
+            <button class="w3-button w3-display-left w3-black Pprev" ng-show="showphotosprev" id="left-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: left;bottom: 224px; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+            <button class="w3-button w3-display-right w3-black Pnext" ng-show="showphotosnext" id="right-button" style="height:9%;padding:1%; border: none;left:94%;border-radius:50%;color: blue; position: relative;float: right;bottom: 224px; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+
+
+
+        </div>
+
+
+        <h4 class="text_40 text_titilium-web text_dark-blue mb_0 mt_0" style="margin-bottom:3%;margin-top:3%;" ng-show="haudio">Audio</h4>
+        <div class="row" style="font-family: Segoe UI,sans-serif;">
+
+            <div class="full hide-scroll scrollcss" ng-show="showaudio">
+                <ul class="hs vid" id="content2">
+                    <li class="item" ng-repeat="audio in popupaudio.audioarray" on-finish-render="ngRepeatFinished" style="display:block">
+                      
+                        <div id="{{audio.guid}}" class="audiogallery" style="opacity:0;">
+                            <div class="items">
+
+                                <div class="audioplayer-tobe" style="width:100%; " data-scrubbg="waves/scrubbg.png" data-scrubprog="waves/scrubprog.png" data-videoTitle="Audio Video" data-type="normal" data-sourceogg="sounds/adg3.ogg" data-source="{{audio.fullaudiourl}}">
+
+                                    <div class="meta-artist"><span class="the-artist">{{audio.filename}}</span><br /><!--<span class="the-name">Revenge</span>--><br /></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <button class="w3-button w3-display-left w3-black Aprev" ng-show="showaudioprev" id="audioleft-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: left;bottom: 144px; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+            <button class="w3-button w3-display-right w3-black Anext" ng-show="showaudionext" id="audioright-button" style="height:9%;padding:1%; border: none;left:94%;border-radius:50%;color: blue; position: relative;float: right;bottom: 144px; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+
+        </div>
+    </section>
+</div>
+<div class="container-fluid background_get_more pl-0 pr-0 pb-0" style="background:none;">
+    <img src="{{fullfooterimageurl}}" class="artist-banner" alt="" style="min-height:400px;max-height:400px;">
+    <div class="row footer">
+        <div class="col-lg-12">
+            <h2 class="text-center get-your-vr__header color-white">{{selectedEventName}}</h2>
+            <p class="text-center get_more__description">
+              Vote for  {{artistmodel.fullname}}
+            </p>
+            <a class="get_more-w-icon get_more-w-icon_blue-gradient get_more-w-icon_border-malibu get_more-w-icon_long m-auto" style="max-width: 13rem;" data-toggle="modal" ng-click="openArtistPopup();" data-target=".modal-artist">
+                <img class="get_more-w-icon__img" src="./img/coin.png"><span class="get_more-w-icon__text">&nbsp;Vote Now</span>
+            </a>
+        </div>
+    </div>
+    <!--<div class="container subscribe-news">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="get-your-vr__header color-white">Video Music Awards 2019</h2>
+                <p class="get_more__description">
+                    {{artistmodel.fullname}}
+                </p>
+                <a class="get_more-w-icon get_more-w-icon_blue-gradient get_more-w-icon_border-malibu get_more-w-icon_long m-auto" style="max-width: 13rem;" data-toggle="modal" ng-click="openArtistPopup();" data-target=".modal-artist">
+                    <img class="get_more-w-icon__img" src="./img/coin.png"><span class="get_more-w-icon__text">&nbsp;Vote Now</span>
+                </a>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header">More Artists</p>
+<div class="container moreartistcss" style="margin-top:2%;">
+    <div class="box">
+        <div class="row">
+
+            <div class="col-md-4 pics" ng-show="showartist">
+                <img src="{{popupartists.fullimageurl}}" class="artist aspect img-fluid" alt="" ng-click="otherartist(popupartists.fullname)">
+                <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0" style="top:-75px;">
+                    <div class="col-8 pl-0 pr-0">
+                        <p class="text-rigth font-weight-bold mb-0 text-white h5 name" style="cursor:pointer;" ng-click="otherartist(popupartists.fullname)">{{popupartists.fullname}}</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 pics" ng-show="showartist1">
+                <img src="{{popupartists.fullimageurl1}}" class="artist aspect img-fluid" alt="" ng-click="otherartist(popupartists.fullname1)">
+                <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0" style="top:-75px;">
+                    <div class="col-8 pl-0 pr-0">
+                        <p class="text-rigth font-weight-bold mb-0 text-white h5 name" style="cursor:pointer;" ng-click="otherartist(popupartists.fullname1)">{{popupartists.fullname1}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 pics" ng-show="showartist2">
+                <img src="{{popupartists.fullimageurl2}}" class="artist aspect img-fluid" alt="" ng-click="otherartist(popupartists.fullname2)">
+                <div class="row text-artist pl-3 pr-3 pt-5 pb-2 mr-0 ml-0" style="top:-75px;">
+                    <div class="col-8 pl-0 pr-0">
+                        <p class="text-rigth font-weight-bold mb-0 text-white h5 name" style="cursor:pointer;" ng-click="otherartist(popupartists.fullname2)">{{popupartists.fullname2}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <button class="w3-button w3-display-left w3-black moreprev" style="height:9%;padding:1%; border: none;left:-2%;border-radius:50%;color: blue; position: relative;float: left;bottom: 262px; transition: 0.5s;cursor: pointer; width: 4%;" ng-show="popupartists.showMultartistsPrev" ng-click="popupartists.MultartistsPrev()">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black morenext" style="height:9%;padding:1%; border: none;right:-2%;border-radius:50%;color: blue; position: relative;float: right;bottom: 262px; transition: 0.5s;cursor: pointer; width: 4%;" ng-show="popupartists.showMultartistsNext" ng-click="popupartists.MultartistsNext()">&#10095;</button>
+
+    </div>
+</div>
+
+
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+        <div class="modal-content artist-modal" ng-show="showArtistPopUp" style="max-width:100%;min-width:50%;padding-bottom:0px;">
+
+            <form role="form" id="form" name="form" novalidate>
+                <div class="row close-modal" data-dismiss="modal">
+                    <div class="col-12 pr-0 pl-0"><img src="img/Close.png" class="close" alt="" style="width:32px;"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{popupImage.fullimageurl}}" class="aspectinfo img-fluid" alt="">
+                        <button class="w3-button w3-display-left w3-black" style="position: absolute;top: 40%;background-color: blue; border: none;" ng-show="popupImage.showImagePrev" ng-click="popupImage.ImagePrev()">&#10094;</button>
+                        <button class="w3-button w3-display-right w3-black" style="background-color: blue;border: none;position: absolute;top: 40%;right: 0%;" ng-show="popupImage.showImageNext" ng-click="popupImage.ImageNext()">&#10095;</button>
+
+                    </div>
+                    <div class="col-md-6">
+                        <!--<div class="row text-modal pl-2 pr-2 pb-2 mr-0 ml-0">-->
+                        <div class="row pl-2 pr-2 pb-2 mr-0 ml-0" style="margin-top:7%;">
+                            <div class="col-12 pl-0 pr-0">
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5">{{selectedArtist.fullname}}</p>
+                                <p class="text-rigth font-weight-bold mb-0 color-ceek h5" style="font-size:0.85rem;word-break: break-word;">{{selectedArtist.description}}</p>
+                                <p class="text-black font-weight-bold h5">Number of votes</p>
+                                <div class="input-group mb-3">
+                                    <!--<input type="text" class="form-control" placeholder="1000" aria-describedby="basic-addon2">-->
+                                    <input type="text" aria-describedby="basic-addon2" min="1" max="1000" class="form-control" name="fname" id="fname" ng-model="selectedArtist.numberofvotes" ng-pattern="/^\d+$/" required>
+
+                                    <div class="input-group-append">
+                                        <a href="" ng-click="submitted=true;vote(form);" data-target=".modal-artist" class="btn btn-ceek">Vote</a>
+                                    </div>
+
+                                </div>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$touched && form.fname.$invalid || submitted&&form.fname.$error.required"><b>Enter at least one vote</b></span>
+                                <span style="color:red;margin-left:5%;" ng-show="form.fname.$error.pattern"><b>Invalid Number</b></span>
+
+                            </div>
+                        </div>
+
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-6%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{message2}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="background:none;color:red;top:-9%;position:relative;font-size:3vh;">
+                            <div class="col-12"><b> {{Vote_errorMessage1}}</b></div>
+                        </div>
+                        <div class="row bg-color-ceek p-2 ml-3 mr-3" style="top:-6%;position:relative">
+                            <div class="col-12" style="padding-left:0px;padding-right:0px;"><p class="text-white text-center mb-0"><img src="img/coin.png" width="16" alt=""> {{ceekpoints}} Coins <a href="" class="" ng-click="cryptoshop();" data-dismiss="modal">&nbsp;Buy More</a></p></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="background:none;color:red;top:0%;position:relative;font-size:3vh;">
+                    <div class="row" style="margin-left:2%;word-wrap:break-word"><b> {{Vote_errorMessage}}</b></div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <div class="modal-content artist-modal" ng-show="showVoteThanksPopUp" style="max-width:100%;padding-bottom:2%;">
+
+            <div>
+                <!--<img class="img-ok" src="img/ok.png" style=" ">-->
+                <p class="color-ceek font-weight-bold" style="padding: 4%;margin-left: 14%">Thanks for your vote!</p>
+
+                <div class="row" style="margin-left:5%;">
+                    <div class="col-md-4">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="closeVoteThanksPopup()" data-dismiss="modal" class="btn btn-ceek">Vote Again</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="cryptoshop();" data-dismiss="modal" class="btn btn-ceek">Buy Ceek Token</a>
+                        </div>
+                    </div>
+                    <div class="col-md-10" style="margin-top: 2%;padding-right: 4px;">
+                        <div class="input-group-append">
+                            <a href="" style="width:60vw;" ng-click="ranking();" data-dismiss="modal" class="btn btn-ceek">Rankings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="modal-content artist-modal" ng-show="showfavouritesPopUp" style="max-width:100%;padding: 6% 1%;width:400px;">
+            <div class="row close-modal favpopup" data-dismiss="modal" style="top: -34px;">
+                <div class="col-12 pr-0 pl-0"><img src="img/Close.png" alt="" style="width:32px;"></div>
+            </div>
+            <h2 class="get-your-vr__header color-blue" style="margin-top:5%;margin-left: 4%;font-size:2rem;width: 24rem;">{{favmsg}}</h2>
+            <a ng-click="close();" id="create" style="cursor:pointer;margin-left:32%;max-width: 6.5rem;margin-top: 7%;padding-left: 0px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Close</span>
+            </a>
+
+
+
+        </div>
+    </div>
+</div>
+

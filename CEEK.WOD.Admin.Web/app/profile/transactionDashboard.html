@@ -1,0 +1,220 @@
+﻿<style>
+    input::-webkit-input-placeholder {
+        color: white !important;
+        font-weight: 700 !important;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+        color: white !important;
+        font-weight: 700 !important;
+    }
+
+    input::-moz-placeholder { /* Firefox 19+ */
+        color: white !important;
+        font-weight: 700 !important;
+    }
+
+    input:-ms-input-placeholder {
+        color: white !important;
+        font-weight: 700 !important;
+    }
+
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid white;
+    }
+
+    .icon {
+        background-repeat: no-repeat;
+        background-image: url('../../img/calender.jpg');
+        background-position: 22vh 1.5vh;
+    }
+
+    .ui-datepicker {
+        width: 14em;
+    }
+
+    .w3-btn, .w3-button {
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .w3-btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+    .w3-btn, .w3-button {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+
+            .w3-disabled *, :disabled * {
+                pointer-events: none;
+            }
+
+            .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
+                box-shadow: none;
+            }
+
+    .w3-black, .w3-hover-black:hover {
+        color: #fff !important;
+        background-color: #000 !important;
+    }
+
+    table td {
+        word-wrap: break-word;
+        max-width: 130px;
+        font-size: 1rem;
+    }
+
+    .media_t_dash {
+        margin-top: 0rem;
+        border-radius: 54px;
+        margin-left: 18%;
+        width: 65%;
+    }
+
+    @media (max-width: 415px) {
+        table td {
+            word-wrap: break-word;
+            max-width: 130px;
+            font-size: 0.8rem;
+        }
+
+          .media_t_dash {
+        margin-top: 0rem;
+        border-radius: 13px;
+        margin-left: 18%;
+        width: 65%;
+    }
+    }
+</style>
+
+
+<p class="h1 text-center font-weight-bold color-ceek get-your-vr__header" style="font-size:1.9rem;">Transaction Dashboard</p>
+<hr style="border-bottom: 1px solid; width:18%;" />
+<div class="container-fluid pl-0 pr-0 body-header media_t_dash">
+    <p class="text-center font-weight-bold mb-0 pt-0 text-light">
+
+        <form class="subscribe-news__form" id="form" name="form" novalidate>
+            <div class="row" style="margin-left:10%;">
+                <div class="subscribe-news__input col-md-4" style="max-width: 11.75rem;">
+                    <input type="text" style="color:white" class="transp-input input" ng-model="search" placeholder="Search">
+
+
+                </div>
+
+
+                <div class="subscribe-news__input col-md-3" style="max-width: 11.75rem;">
+                    <input type="text" style="color:white" class="icon transp-input input" placeholder="From" id="txtFrom" name="txtFrom" ng-click="back();" required>
+
+                    <span style="color:red;" ng-show="showVoteThanksPopUp"><b>Enter start date</b></span>
+
+                </div>
+
+                <div class="subscribe-news__input col-md-3" style="max-width: 11.75rem;">
+                    <input type="text" style="color:white" class="icon transp-input input" placeholder="To" id="txtTo" name="txtTo" ng-click="back();" required>
+                    <span style="color:red;" ng-show="showVoteThanksPopUp1"><b>Enter end date</b></span>
+
+
+                </div>
+
+                <div ng-click="submitted=true;submit1(form)" class="subscribe-news__input col-md-2" style="cursor:pointer">
+                    <a id="login1" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long" style="width:6em;">
+                        <span class="btn-w-icon__text">Submit</span>
+                    </a>
+
+                </div>
+
+
+            </div>
+        </form>
+    </p>
+</div>
+
+
+<div class="container" style="margin-top:50px;overflow-x: scroll;">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Ceek Points</th>
+
+                <th>Action</th>
+                <th>Transaction Id</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="x in transactionmodel">
+            <div id="voteheader" ng-show="x.typeoftransaction=='Vote'" style="display:inline-block">
+                <tr ng-show="x.typeoftransaction=='Vote'">
+                    <td>{{x.emailid}}</td>
+                    <td style="color:red">-<b>{{x.TokenGainedOrBurned2}}</b></td>
+                    <td>{{x.VoteCasted}} Vote(s) to <b style="font-size:18px;"> {{x.voteartistname}}</b></td>
+                    <td>No Id for this Transaction  </td>
+                    <td>{{x.createddate |utcToLocal:'dd-MM-yy  hh:mm a'}}</td>
+                </tr>
+            </div>
+            <div id="buyheader" ng-show="x.typeoftransaction=='BuyIn'" style="display:inline-block">
+                <tr ng-show="x.typeoftransaction=='BuyIn'">
+                    <td>{{x.emailid}}</td>
+                    <td style="color:green">+<b>{{x.TokenGainedOrBurned2}}</b></td>
+                    <td>Bought CEEK Points for USD<b style="color:black;font-size:18px;"> {{x.SubsciptionPlanCost}}</td>
+                    <td style="color:brown"><b>{{x.transactionid}}</b></td>
+                    <td>{{x.createddate |utcToLocal:'dd-MM-yy  hh:mm a'}}</td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message1}}</b>
+    </div>
+    <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message2}}</b>
+    </div>
+    <div class="w3-show-inline-block" style="margin-right:12%;float:right;">
+        <div class="w3-bar">
+            <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!enablePrevPage"
+                    ng-click="prevPage()">
+                <<
+            </button>
+
+            <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal">Page:<b style="color:white;font-size:18px"> {{ pageNo }} &nbsp; </b></label>
+            <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!enableNextPage"
+                    ng-click="nextPage()">
+                >>
+            </button>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+

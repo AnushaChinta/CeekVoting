@@ -1,0 +1,34 @@
+﻿
+<div class="container-fluid pl-0 pr-0 body-header" style="margin-top:0;">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;"> Account Details</p>
+</div>
+
+<div class="container cont">
+
+   
+    <form class="subscribe-news__form cont3" id="form1" name="form" novalidate>
+        <div style="margin-left:42%;font-size:3vh;background:none;color:red;">
+            <b>{{message}}</b>
+        </div>
+
+        <div style="width:100%;">
+
+            <b><span class="get-your-vr__header color-blue" style="color:#5F5F5F;font-size: 1.3rem;"> CEEK Balance:</span>&nbsp;<span class="get-your-vr__header color-blue" style="font-size: 1.3rem;">{{accountmodel.ceek_points | number}}</span></b>
+            <i class="fa fa-refresh" style="margin-left:8px;cursor:pointer;font-size: 1.3rem; color:#ff7c4c;" ng-click="refreshwalletbalance()"></i>
+            <br />
+            <b><span class="get-your-vr__header color-blue" style="color:#5F5F5F;font-size: 1.3rem;">ETH Balance&nbsp;&nbsp;:</span>&nbsp;<span class="get-your-vr__header color-blue" style="font-size: 1.3rem;">{{ETH_balance}}</span></b>
+            <div style="margin-top:3px;">
+                <span style="color:#ff5e00eb">( ETH balance is required for transaction charges while buying Ceek tokens and Voting ) </span>
+            </div>
+            <div style="margin-top: 1%;">
+                <b><span class="get-your-vr__header color-blue" style="color:#5F5F5F;font-size:1.3rem;">Wallet Address :</span>&nbsp;<span class="get-your-vr__header color-blue" style="font-size: 1.3rem;word-break:break-word;">{{accountmodel.crypto_addr_public}}</span></b>
+            </div>
+            <input id="text" type="text" value="wallet Address" style="width:80%;display:none;" /><br />
+            <div id="qrcode"></div>
+
+        </div>
+
+    </form>
+
+
+</div>

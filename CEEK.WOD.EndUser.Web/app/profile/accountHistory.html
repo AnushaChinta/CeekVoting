@@ -1,0 +1,424 @@
+﻿<style>
+    .subscribe-news__input .transp-input {
+        color: black;
+    }
+
+    .input {
+        border-bottom: 2px solid white;
+    }
+
+    .icon {
+        background-repeat: no-repeat;
+        background-image: url('../../img/calender.jpg');
+        background-position: 22vh 1.5vh;
+    }
+
+    .ui-datepicker {
+        width: 14em;
+    }
+
+    .w3-btn, .w3-button {
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .w3-btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+    .w3-btn, .w3-button {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+
+            .w3-disabled *, :disabled * {
+                pointer-events: none;
+            }
+
+            .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
+                box-shadow: none;
+            }
+
+    .w3-black, .w3-hover-black:hover {
+        color: #fff !important;
+        background-color: #000 !important;
+    }
+
+    .font {
+        font-family: Titillium Web,sans-serif !important;
+        font-size: 1.10rem;
+    }
+
+    .OUT {
+        background-color: #ff4500d1; /* Green */
+        border: none;
+        color: white;
+        padding: 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        width: 50px;
+        border-radius: 5px;
+    }
+
+    .IN {
+        background-color: green; /* Green */
+        border: none;
+        color: white;
+        padding: 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0px 2px;
+        width: 50px;
+        border-radius: 5px;
+    }
+
+    .SELF {
+        background-color: #1097d8; /* Green */
+        border: none;
+        color: white;
+        padding: 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0px 2px;
+        width: 50px;
+        border-radius: 5px;
+    }
+
+
+    /*tabs css*/
+
+    /*body {
+        font-family: Titillium Web,sans-serif;
+    }*/
+
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+    }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: #d4d4d4;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 6px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #5F5F5F;
+                color: white;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #2E31D2;
+                color: white;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    /* Style the close button */
+    .topright {
+        float: right;
+        cursor: pointer;
+        font-size: 28px;
+    }
+
+        .topright:hover {
+            color: red;
+        }
+
+    table td {
+        word-wrap: break-word;
+        /*max-width: 130px;*/
+        font-size: 1rem;
+    }
+
+    .ethcss {
+        cursor: pointer;
+        color: #2E37FE;
+    }
+
+        .ethcss:hover {
+            text-decoration: underline;
+        }
+
+
+</style>
+
+
+<div class="container cont2 font">
+    <div class="container-fluid pl-0 pr-0 body-header" style="margin-top:50px;">
+        <p class="text-center font-weight-bold mb-0 pt-3 text-light font">
+            Transaction History
+        </p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row col-md-12" style="margin-top:2%;">
+        <div class="tab">
+            <button class="tablinks" style="margin-right: 2px;" onclick="openCity(event, 'Voting Transactions')" id="defaultOpen">Website Transactions</button>
+            <button class="tablinks" style="margin-right: 2px;" onclick="openCity(event, 'ETH Transactions')">
+                ETH Transactions
+            </button>
+            <button class="tablinks" onclick="openCity(event, 'ERC20 Transactions')">ERC20 Transactions</button>
+
+        </div>
+        <hr />
+    </div>
+    <hr style="margin-top: 0rem;margin-bottom: 0rem;border-top: 2px solid #2E31D2;" />
+
+    <div id="Voting Transactions" class="tabcontent table-responsive">
+
+        <table class="table table-hover ">
+            <thead>
+                <tr style="color:black;">
+                    <th></th>
+                    <th>Value</th>
+
+                    <th>Action</th>
+                    <th>Transaction Id</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in transactionmodel">
+                <div id="voteheader" ng-show="x.typeoftransaction=='Vote'" style="display:inline-block">
+                    <tr ng-show="x.typeoftransaction=='Vote'">
+                        <td width="10%" class="align-content-center" style="color:#2E37FE;"><button class="OUT">OUT</button></td>
+                        <td width="20%">
+                            <img src="../../img/token_icon.png" /> <b>{{x.TokenGainedOrBurned2}}</b>
+                        </td>
+                        <td>{{x.VoteCasted}} Vote(s) to <b style="font-size:18px;"> {{x.voteartistname}}</b></td>
+                        <td ng-click="openPrivateBlockchainTX(x)" class="ethcss">
+                            <span ng-if="x.transactionhash">{{x.transactionhash.substring(0, 15) + "......."}}</span>
+                        </td>
+                        <td>{{x.createddate |utcToLocal:'dd-MM-yy  hh:mm a'}}</td>
+                    </tr>
+                </div>
+                <div id="buyheader" ng-show="x.typeoftransaction=='BuyIn'" style="display:inline-block">
+                    <tr ng-show="x.typeoftransaction=='BuyIn'">
+                        <td width="10%" class="align-content-center" style="color:#2E37FE;"><button class="IN">IN  </button></td>
+                        <td width="10%"><img src="../../img/token_icon.png" /> <b>{{x.TokenGainedOrBurned2}}</b></td>
+                        <td>Bought CEEK Points for USD<b style="color:black;font-size:18px;"> {{(x.SubsciptionPlanCost/100).toFixed(2)}}</b></td>
+                        <td ng-click="hash1(x)" class="ethcss"><span ng-if="x.transactionhash">{{x.transactionhash.substring(0, 15) + "......."}}</span></td>
+                        <td>{{x.createddate |utcToLocal:'dd-MM-yy  hh:mm a'}}</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+        <div class="error2" style="margin-left:40%;font-size:3vh;background:none;color:red;">
+            <b>{{message1}}</b>
+        </div>
+        <div class="error2" style="margin-left:42%;font-size:3vh;background:none;color:red;">
+            <b>{{message2}}</b>
+        </div>
+        <div class="w3-show-inline-block" style="margin-right:12%;margin-top:1%;float:right;">
+            <div class="w3-bar">
+                <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!enablePrevPage"
+                        ng-click="prevPage()">
+                    <<
+                </button>
+
+                <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal font">Page:<b style="color:white;font-size:18px"> {{ pageNo }} &nbsp; </b></label>
+                <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!enableNextPage"
+                        ng-click="nextPage()">
+                    >>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div id="ETH Transactions" class="tabcontent table-responsive">
+
+        <table class="table table-hover">
+            <thead>
+                <tr style="color:black;">
+                    <th></th>
+                    <th width="15%">Value</th>
+
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Transaction Id</th>
+
+                    <th>Timestamp</th>
+
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in ETHtransactionmodel">
+                <tr>
+                    <td class="align-content-center align-items-center" style="color:#2E37FE;" ng-if="x.from === w_address">
+                        <button class="OUT">OUT</button>
+
+                    </td>
+                    <td class="justify-content-center align-self-center" style="color:#2E37FE;" ng-if="x.from !== w_address && x.from !== x.to">
+                        <button class="IN">IN  </button>
+                    </td>
+                    <td class="align-content-center" style="color:#2E37FE;" ng-if="x.from === x.to">
+                        <button class="SELF">SELF  </button>
+                    </td>
+                    <td width="15%"><b>{{x.value | number : 5}} Ether</b></td>
+
+
+                    <td ng-click="from(x)" class="ethcss">{{x.from1}}</td>
+                    <td ng-click="to(x)" class="ethcss">{{x.to1}}</td>
+
+                    <td ng-click="hash(x)" class="ethcss">{{x.hash1}}</td>
+
+                    <td>{{x.timeStamp * 1000 | date:'dd-MM-yy  hh:mm a'}}</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="error2" style="margin-left:40%;font-size:3vh;background:none;color:red;">
+            <b>{{ethmessage1}}</b>
+        </div>
+        <div class="error2" style="margin-left:42%;font-size:3vh;background:none;color:red;">
+            <b>{{ethmessage2}}</b>
+        </div>
+        <div class="w3-show-inline-block" style="margin-right:12%;margin-top:1%; float :right;">
+            <div class="w3-bar">
+                <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!ethenablePrevPage"
+                        ng-click="ethprevPage()">
+                    <<
+                </button>
+
+                <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal font">Page:<b style="color:white;font-size:18px"> {{ ethpageNo }} &nbsp; </b></label>
+                <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!ethenableNextPage"
+                        ng-click="ethnextPage()">
+                    >>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="ERC20 Transactions" class="tabcontent table-responsive">
+
+        <table class="table table-hover">
+            <thead>
+                <tr style="color:black;">
+                    <th></th>
+                    <th><b></b>Value</th>
+
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Transaction Id</th>
+
+                    <th>Timestamp</th>
+
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in ERCtransactionmodel">
+
+                <tr>
+                    <td class="align-content-center" style="color:#2E37FE;" ng-if="x.from === w_address">
+                        <button class="OUT">OUT</button>
+
+                    </td>
+                    <td class="align-content-center" style="color:#2E37FE;" ng-if="x.from !== w_address && x.from !== x.to">
+                        <button class="IN">IN  </button>
+                    </td>
+                    <td class="align-content-center" style="color:#2E37FE;" ng-if="x.from === x.to">
+                        <button class="SELF">SELF  </button>
+                    </td>
+                    <td><b><img ng-if="x.contractAddress == ceekContractAddress" src="../../img/token_icon.png" />{{x.value  | number : 5}}</b></td>
+
+
+                    <td ng-click="from(x)" class="ethcss">{{x.from1}}</td>
+                    <td ng-click="to(x)" class="ethcss">{{x.to1}}</td>
+
+                    <td ng-click="hash(x)" class="ethcss">{{x.hash1}}</td>
+
+                    <td>{{x.timeStamp * 1000 | date:'dd-MM-yy  hh:mm a'}}</td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+        <div class="error2" style="margin-left:40%;font-size:3vh;background:none;color:red;">
+            <b>{{ercmessage1}}</b>
+        </div>
+        <div class="error2" style="margin-left:42%;font-size:3vh;background:none;color:red;">
+            <b>{{ercmessage2}}</b>
+        </div>
+        <div class="w3-show-inline-block" style="margin-right:12%;margin-top:1%;float:right;">
+            <div class="w3-bar">
+                <button class="w3-btn w3-black" type="button" ng-show="show" value="prev" ng-disabled="!ercenablePrevPage"
+                        ng-click="ercprevPage()">
+                    <<
+                </button>
+
+                <label style="margin-bottom:0px;background-color:#243148;color:white;" class="w3-btn w3-teal font">Page:<b style="color:white;font-size:18px"> {{ ercpageNo }} &nbsp; </b></label>
+                <button class="w3-btn w3-black" type="button" ng-show="btn" value="next" ng-disabled="!ercenableNextPage"
+                        ng-click="ercnextPage()">
+                    >>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+

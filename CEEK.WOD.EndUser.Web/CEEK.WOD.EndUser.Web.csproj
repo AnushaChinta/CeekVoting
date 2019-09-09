@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F15BAD4-1A93-4908-A616-6DBAF9FBB4E6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\404\404.html" />
+    <Content Include="app\404\404Ctrl.js" />
+    <Content Include="app\artist\artistInfo.html" />
+    <Content Include="app\artist\artistInfoCtrl.js" />
+    <Content Include="app\artist\artistNominations.html" />
+    <Content Include="app\artist\artistNominationsCtrl.js" />
+    <Content Include="app\common\apiFactory.js" />
+    <Content Include="app\common\masterdataFactory.js" />
+    <Content Include="app\common\router.js" />
+    <Content Include="app\common\sessionService.js" />
+    <Content Include="app\forgotpassword\forgotpassword.html" />
+    <Content Include="app\forgotpassword\forgotpasswordCtrl.js" />
+    <Content Include="app\forgotpassword\forgotpasswordFactory.js" />
+    <Content Include="app\home\home.html" />
+    <Content Include="app\home\homeCtrl.js" />
+    <Content Include="app\home\homeFactory.js" />
+    <Content Include="app\artist\artist.html" />
+    <Content Include="app\artist\artistCtrl.js" />
+    <Content Include="app\artist\artistFactory.js" />
+    <Content Include="app\loader.js" />
+    <Content Include="app\login\login.html" />
+    <Content Include="app\login\loginCtrl.js" />
+    <Content Include="app\login\loginFactory.js" />
+    <Content Include="app\main.js" />
+    <Content Include="app\master\master.html" />
+    <Content Include="app\master\masterCtrl.js" />
+    <Content Include="app\profile\accountHistory.html" />
+    <Content Include="app\profile\accountInfo.html" />
+    <Content Include="app\profile\accountHistoryCtrl.js" />
+    <Content Include="app\profile\accountInfoCtrl.js" />
+    <Content Include="app\profile\myFavourite.html" />
+    <Content Include="app\profile\myFavouriteCtrl.js" />
+    <Content Include="app\profile\myvotes.html" />
+    <Content Include="app\profile\myvotesCtrl.js" />
+    <Content Include="app\profile\profile.html" />
+    <Content Include="app\profile\profileCtrl.js" />
+    <Content Include="app\profile\profileFactory.js" />
+    <Content Include="app\signup\signup.html" />
+    <Content Include="app\signup\signupCtrl.js" />
+    <Content Include="app\signup\signupFactory.js" />
+    <Content Include="app\votes\votes.html" />
+    <Content Include="app\votes\votesCtrl.js" />
+    <Content Include="app\votes\votesFactory.js" />
+    <Content Include="app\cryptoshop\cryptoshop.html" />
+    <Content Include="app\cryptoshop\cryptoshopCtrl.js" />
+    <Content Include="app\cryptoshop\cryptoshopFactory.js" />
+    <Content Include="audioplayer\audioplayer.css" />
+    <Content Include="audioplayer\audioplayer.dev.js" />
+    <Content Include="audioplayer\audioplayer.js" />
+    <Content Include="audioplayer\audioportal-grid.css" />
+    <Content Include="audioplayer\img\icon_itunes.svg" />
+    <Content Include="audioplayer\img\icon_soundcloud.svg" />
+    <Content Include="audioplayer\img\icon_youtube.svg" />
+    <Content Include="audioplayer\img\skin-justthumbandbutton-pausebtn.png" />
+    <Content Include="audioplayer\img\skin-justthumbandbutton-playbtn.png" />
+    <Content Include="audioplayer\img\skin_minion_arrowleft.png" />
+    <Content Include="audioplayer\img\skin_minion_arrowright.png" />
+    <Content Include="audioplayer\img\skin_minion_pausebtn.png" />
+    <Content Include="audioplayer\img\skin_minion_playbtn.png" />
+    <Content Include="audioplayer\wavesurfer.js" />
+    <Content Include="css\app.css" />
+    <Content Include="css\artist.css" />
+    <Content Include="css\body.css" />
+    <Content Include="css\Bootstrap\css\bootstrap-grid.css" />
+    <Content Include="css\Bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="css\Bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="css\Bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="css\Bootstrap\css\bootstrap.css" />
+    <Content Include="css\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="css\Bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="css\Bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="css\Bootstrap\js\bootstrap.js" />
+    <Content Include="css\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="css\Bootstrap\js\jquery.js" />
+    <Content Include="css\fonts.css" />
+    <Content Include="css\footer.css" />
+    <Content Include="css\menu.css" />
+    <Content Include="css\ranking.css" />
+    <Content Include="img\apple-logo.svg" />
+    <Content Include="img\appstore-btn.svg" />
+    <Content Include="img\artist-1.png" />
+    <Content Include="img\artist-10.png" />
+    <Content Include="img\artist-2.png" />
+    <Content Include="img\artist-3.png" />
+    <Content Include="img\artist-4.png" />
+    <Content Include="img\artist-5.png" />
+    <Content Include="img\artist-6.png" />
+    <Content Include="img\artist-7.png" />
+    <Content Include="img\artist-8.png" />
+    <Content Include="img\artist-9.png" />
+    <Content Include="img\Audio.mp3" />
+    <Content Include="img\BANNER.png" />
+    <Content Include="img\blue-logo.svg" />
+    <Content Include="img\buy-9.png" />
+    <Content Include="img\card.png" />
+    <Content Include="img\ceek-city-sm.jpg" />
+    <Content Include="img\ceek-logo-blue-logo.svg" />
+    <Content Include="img\ceek-logo.svg" />
+    <Content Include="img\close.png" />
+    <Content Include="img\coin.png" />
+    <Content Include="img\default-banner.jpg" />
+    <Content Include="img\facebook-icon.png" />
+    <Content Include="img\favicon-32x32.png" />
+    <Content Include="img\googleplay-btn.svg" />
+    <Content Include="img\header.png" />
+    <Content Include="img\headphones3762.png" />
+    <Content Include="img\icon.png" />
+    <Content Include="img\idol.png" />
+    <Content Include="img\lock-icon.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\Medal-1.png" />
+    <Content Include="img\Medal-2.png" />
+    <Content Include="img\Medal-3.png" />
+    <Content Include="img\movie.png" />
+    <Content Include="img\oculus-icon.png" />
+    <Content Include="img\orlando-magic.svg" />
+    <Content Include="img\sac-kings.svg" />
+    <Content Include="img\shop.jpg" />
+    <Content Include="img\t-mobile-logo.svg" />
+    <Content Include="img\token_icon.png" />
+    <Content Include="img\universal-mg-logo.svg" />
+    <Content Include="img\user-placeholder.png" />
+    <Content Include="img\vma.png" />
+    <Content Include="index.html" />
+    <Content Include="js\angular-sanitize.min.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\qrcode.js" />
+    <Content Include="packages.config" />
+    <Content Include="vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\iCheck\.bower.json" />
+    <Content Include="vendor\iCheck\bower.json" />
+    <Content Include="vendor\iCheck\icheck.jquery.json" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="img\Thumbs.db" />
+    <Content Include="css\fonts\segoeui.ttf" />
+    <Content Include="css\fonts\segoeuib.ttf" />
+    <Content Include="css\fonts\segoeuil.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-Black.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-Bold.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-BoldItalic.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-ExtraLight.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-ExtraLightItalic.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-Italic.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-Light.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-LightItalic.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-Regular.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-SemiBold.ttf" />
+    <Content Include="css\fonts\TitilliumWeb-SemiBoldItalic.ttf" />
+    <Content Include="css\Bootstrap\css\.DS_Store" />
+    <Content Include="css\Bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="css\Bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="css\Bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="css\Bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\Bootstrap\css\bootstrap.css.map" />
+    <Content Include="css\Bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="css\Bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="css\Bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="css\Bootstrap\js\bootstrap.js.map" />
+    <Content Include="css\Bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="audioplayer\.DS_Store" />
+    <Content Include="audioplayer\audioplayer.css.map" />
+    <Content Include="audioplayer\audioplayer.scss" />
+    <Content Include="audioplayer\audioportal-grid.css.map" />
+    <Content Include="audioplayer\audioportal-grid.scss" />
+    <Content Include="audioplayer\img\.DS_Store" />
+    <Content Include="audioplayer\inc\.DS_Store" />
+    <Content Include="audioplayer\inc\_ap_skinvariation_wave_bigtitles.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_aria.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_customcontrols.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_default.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_justthumbandbutton.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_minimal.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_minion.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_pro.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_redlights.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_silver.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_steel.scss" />
+    <Content Include="audioplayer\inc\_ap_skin_wave.scss" />
+    <None Include="Properties\PublishProfiles\ceekenduser.pubxml" />
+    <Content Include="vendor\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vendor\angular\angular-cookies.min.js" />
+    <Content Include="vendor\angular\angular-payments.js" />
+    <Content Include="vendor\angular\angular-ui-router.js" />
+    <Content Include="vendor\angular\angular.min.js" />
+    <Content Include="vendor\angular\angularAMD.min.js" />
+    <Content Include="vendor\angular\require.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\npm.js" />
+    <Content Include="vendor\fastclick\fastclick.js" />
+    <Content Include="vendor\iCheck\icheck.js" />
+    <Content Include="vendor\iCheck\icheck.min.js" />
+    <Content Include="vendor\iCheck\skins\all.css" />
+    <Content Include="vendor\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\aero.css" />
+    <Content Include="vendor\iCheck\skins\flat\aero.png" />
+    <Content Include="vendor\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\blue.css" />
+    <Content Include="vendor\iCheck\skins\flat\blue.png" />
+    <Content Include="vendor\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\flat.css" />
+    <Content Include="vendor\iCheck\skins\flat\flat.png" />
+    <Content Include="vendor\iCheck\skins\flat\green%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\green.css" />
+    <Content Include="vendor\iCheck\skins\flat\green.png" />
+    <Content Include="vendor\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\grey.css" />
+    <Content Include="vendor\iCheck\skins\flat\grey.png" />
+    <Content Include="vendor\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\orange.css" />
+    <Content Include="vendor\iCheck\skins\flat\orange.png" />
+    <Content Include="vendor\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\pink.css" />
+    <Content Include="vendor\iCheck\skins\flat\pink.png" />
+    <Content Include="vendor\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\purple.css" />
+    <Content Include="vendor\iCheck\skins\flat\purple.png" />
+    <Content Include="vendor\iCheck\skins\flat\red%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\red.css" />
+    <Content Include="vendor\iCheck\skins\flat\red.png" />
+    <Content Include="vendor\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="vendor\iCheck\skins\flat\yellow.css" />
+    <Content Include="vendor\iCheck\skins\flat\yellow.png" />
+    <Content Include="vendor\iCheck\skins\flat\_all.css" />
+    <Content Include="vendor\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="vendor\iCheck\skins\futurico\futurico.css" />
+    <Content Include="vendor\iCheck\skins\futurico\futurico.png" />
+    <Content Include="vendor\iCheck\skins\line\aero.css" />
+    <Content Include="vendor\iCheck\skins\line\blue.css" />
+    <Content Include="vendor\iCheck\skins\line\green.css" />
+    <Content Include="vendor\iCheck\skins\line\grey.css" />
+    <Content Include="vendor\iCheck\skins\line\line%402x.png" />
+    <Content Include="vendor\iCheck\skins\line\line.css" />
+    <Content Include="vendor\iCheck\skins\line\line.png" />
+    <Content Include="vendor\iCheck\skins\line\orange.css" />
+    <Content Include="vendor\iCheck\skins\line\pink.css" />
+    <Content Include="vendor\iCheck\skins\line\purple.css" />
+    <Content Include="vendor\iCheck\skins\line\red.css" />
+    <Content Include="vendor\iCheck\skins\line\yellow.css" />
+    <Content Include="vendor\iCheck\skins\line\_all.css" />
+    <Content Include="vendor\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\aero.css" />
+    <Content Include="vendor\iCheck\skins\minimal\aero.png" />
+    <Content Include="vendor\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\blue.css" />
+    <Content Include="vendor\iCheck\skins\minimal\blue.png" />
+    <Content Include="vendor\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\green.css" />
+    <Content Include="vendor\iCheck\skins\minimal\green.png" />
+    <Content Include="vendor\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\grey.css" />
+    <Content Include="vendor\iCheck\skins\minimal\grey.png" />
+    <Content Include="vendor\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\minimal.css" />
+    <Content Include="vendor\iCheck\skins\minimal\minimal.png" />
+    <Content Include="vendor\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\orange.css" />
+    <Content Include="vendor\iCheck\skins\minimal\orange.png" />
+    <Content Include="vendor\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\pink.css" />
+    <Content Include="vendor\iCheck\skins\minimal\pink.png" />
+    <Content Include="vendor\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\purple.css" />
+    <Content Include="vendor\iCheck\skins\minimal\purple.png" />
+    <Content Include="vendor\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\red.css" />
+    <Content Include="vendor\iCheck\skins\minimal\red.png" />
+    <Content Include="vendor\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="vendor\iCheck\skins\minimal\yellow.css" />
+    <Content Include="vendor\iCheck\skins\minimal\yellow.png" />
+    <Content Include="vendor\iCheck\skins\minimal\_all.css" />
+    <Content Include="vendor\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="vendor\iCheck\skins\polaris\polaris.css" />
+    <Content Include="vendor\iCheck\skins\polaris\polaris.png" />
+    <Content Include="vendor\iCheck\skins\square\aero%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\aero.css" />
+    <Content Include="vendor\iCheck\skins\square\aero.png" />
+    <Content Include="vendor\iCheck\skins\square\blue%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\blue.css" />
+    <Content Include="vendor\iCheck\skins\square\blue.png" />
+    <Content Include="vendor\iCheck\skins\square\green%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\green.css" />
+    <Content Include="vendor\iCheck\skins\square\green.png" />
+    <Content Include="vendor\iCheck\skins\square\grey%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\grey.css" />
+    <Content Include="vendor\iCheck\skins\square\grey.png" />
+    <Content Include="vendor\iCheck\skins\square\orange%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\orange.css" />
+    <Content Include="vendor\iCheck\skins\square\orange.png" />
+    <Content Include="vendor\iCheck\skins\square\pink%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\pink.css" />
+    <Content Include="vendor\iCheck\skins\square\pink.png" />
+    <Content Include="vendor\iCheck\skins\square\purple%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\purple.css" />
+    <Content Include="vendor\iCheck\skins\square\purple.png" />
+    <Content Include="vendor\iCheck\skins\square\red%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\red.css" />
+    <Content Include="vendor\iCheck\skins\square\red.png" />
+    <Content Include="vendor\iCheck\skins\square\square%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\square.css" />
+    <Content Include="vendor\iCheck\skins\square\square.png" />
+    <Content Include="vendor\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="vendor\iCheck\skins\square\yellow.css" />
+    <Content Include="vendor\iCheck\skins\square\yellow.png" />
+    <Content Include="vendor\iCheck\skins\square\_all.css" />
+    <Content Include="vendor\jquery.hotkeys\jquery.hotkeys.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jqueryui.min.js" />
+    <Content Include="vendor\jquery\multi-select.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55870</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55871/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

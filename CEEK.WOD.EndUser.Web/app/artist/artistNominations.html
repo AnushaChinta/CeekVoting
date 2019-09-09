@@ -1,0 +1,823 @@
+﻿<style>
+    .mce-tinymce.mce-container.mce-panel {
+        border: 2px solid blue !important;
+    }
+
+    .requiredspan {
+        color: red;
+    }
+
+    .get-your-vr__header1 {
+        margin-top: 20px;
+    }
+
+    .avatar-upload-marginleft5 {
+        margin-left: 5px;
+    }
+
+    .subscribe-news__input .transp-input {
+        color: black;
+        letter-spacing: 0px;
+        background: none;
+        /*background-color: white;*/
+    }
+
+    .subscribe-news__input {
+        max-width: 35.75rem;
+    }
+
+    .input {
+        border: solid 2px blue;
+        padding-bottom: 0px;
+        letter-spacing: 0px;
+        padding-left: 2px;
+        opacity: 1;
+    }
+
+    .img-artist {
+        float: left;
+        height: 39vh;
+        margin-bottom: 3%;
+    }
+
+    .con1 {
+        margin-left: 15%;
+        padding-left: 8%;
+        margin-top: 2%;
+    }
+
+    .con2 {
+        margin-left: 15%;
+        padding-left: 12%;
+    }
+
+    .media_form1 {
+        padding-left: 35%;
+    }
+
+    .media_popup {
+        padding-left: 35%;
+        cursor: pointer;
+    }
+
+    .media_content {
+        max-width: 100%;
+        min-width: 48%;
+        margin-top: 8%;
+        padding-bottom: 0px;
+    }
+
+    /*video {
+        margin-left: -13%;
+    }*/
+    @media screen and (max-width: 1300px) {
+        .body-header {
+            margin-top: -6.25rem !important;
+        }
+
+        .con1 {
+            margin-left: 10% !important;
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:790px) {
+        .main-header{
+            width: 100vw !important;
+        }
+
+        .img-artist {
+            float: none;
+            height: 39vh;
+            margin-top: 5%;
+        }
+        .avatar-upload .avatar-preview{
+            width: 318px !important;
+        }
+        .avatar-upload {
+            height: 26vh !important;
+             width: 318px !important;
+        }
+        .input-group-append{
+            width:21% !important;
+        }
+        .avatar-upload1 {
+           height: 26vh !important;
+            width: 318px !important;
+        }
+
+        .body-header {
+           margin-top: 3.25rem !important;
+        }
+        .btncancel{
+            margin-left: 12% !important;
+        }
+        .con1 {
+            margin-left: 0% !important;
+            padding-left: 5% !important;
+            padding-right: 5% !important;
+        }
+
+        .drop {
+            position: relative !important;
+            bottom: 171px !important;
+            transition: 0.5s !important;
+            cursor: pointer;
+        }
+
+        .con2 {
+            margin-left: 0%;
+            padding-left: 0%;
+        }
+
+        .media_form1 {
+            padding-left: 3.5%;
+        }
+
+        .media_popup {
+            padding-left: 0%;
+            cursor: pointer;
+        }
+
+        .media_content {
+            max-width: 100%;
+            min-width: 48%;
+            margin-top: 36%;
+            padding-bottom: 0px;
+        }
+    }
+
+
+    .avatar-upload {
+        /*height: 26vh;
+      width: 469px;*/
+        width: 338px;
+        height: 190px;
+    }
+
+        .avatar-upload .avatar-edit {
+            position: absolute;
+            right: 12px;
+            z-index: 1;
+            top: 10px;
+        }
+
+            .avatar-upload .avatar-edit input {
+                display: none;
+            }
+
+                .avatar-upload .avatar-edit input + label {
+                    display: inline-block;
+                    width: 34px;
+                    height: 34px;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    font-weight: normal;
+                    transition: all 0.2s ease-in-out;
+                }
+
+    .avatar-upload1 {
+        /*height: 26vh;
+    width: 469px;*/
+        height: 100px;
+        width: 480px;
+    }
+
+        .avatar-upload1 .avatar-edit1 {
+            position: absolute;
+            right: 12px;
+            z-index: 1;
+            top: 10px;
+        }
+
+            .avatar-upload1 .avatar-edit1 input {
+                display: none;
+            }
+
+                .avatar-upload1 .avatar-edit1 input + label {
+                    display: inline-block;
+                    width: 34px;
+                    height: 34px;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    font-weight: normal;
+                    transition: all 0.2s ease-in-out;
+                }
+
+    .avatar-upload .avatar-edit input + label:after {
+        content: "\f030";
+        font-family: 'FontAwesome';
+        color: #757575;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+    }
+
+    .avatar-upload .avatar-preview {
+        /*width: 278px;
+        height: 206px;*/
+        width: 338px;
+        height: 190px;
+        position: relative;
+    }
+
+        .avatar-upload .avatar-preview > div {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+    .avatar-upload1 .avatar-edit1 input + label:after {
+        content: "\f030";
+        font-family: 'FontAwesome';
+        color: #757575;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+    }
+
+    .avatar-upload1 .avatar-preview1 {
+        /*width: 278px;
+        height: 206px;*/
+        width: 480px;
+        height: 100px;
+        position: relative;
+    }
+
+        .avatar-upload1 .avatar-preview1 > div {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+    label {
+        font-size: 1.25rem;
+    }
+
+    input::-webkit-input-placeholder {
+        /*color: black !important;*/
+        opacity: 0.7 !important;
+        font-size: 1.25rem;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+        color: black !important;
+        opacity: 0.7 !important;
+        font-size: 1.25rem;
+    }
+
+    input::-moz-placeholder { /* Firefox 19+ */
+        color: black !important;
+        opacity: 0.7 !important;
+        font-size: 1.25rem;
+    }
+
+    input:-ms-input-placeholder {
+        color: black !important;
+        opacity: 0.7 !important;
+        font-size: 18px !important;
+    }
+
+    .remove {
+        height: 4vh;
+        width: 2vw;
+        /*position: absolute;*/
+        /*top: 9%;*/
+        /*left: 42%;*/
+        margin-left: 22vw;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #desc {
+        font-family: "Titillium Web,sans-serif";
+        font-size: 1.25rem;
+    }
+</style>
+
+<style>
+    .multi-select-container {
+        display: inline-block;
+        position: relative;
+        color: black;
+        width: 100%;
+    }
+
+    .multi-select-menu {
+        position: absolute;
+        left: 0;
+        top: 0.8em;
+        z-index: 2;
+        float: left;
+        min-width: 100%;
+        background: #fff;
+        margin: 1em 0;
+        border: 1px solid blue;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        display: none;
+        color: black;
+    }
+
+    .multi-select-menuitem {
+        display: block;
+        font-size: 0.875em;
+        padding: 0.6em 1em 0.6em 30px;
+        white-space: nowrap;
+    }
+
+        .multi-select-menuitem + .multi-select-menuitem {
+            padding-top: 0;
+        }
+
+    .multi-select-presets {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .multi-select-menuitem input {
+        position: absolute;
+        margin-top: 0.25em;
+        margin-left: -20px;
+    }
+
+    .multi-select-button {
+        display: inline-block;
+        /*font-size: 0.875em;*/
+        padding: 0.2em 0.6em;
+        max-width: 35.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: -0.5em;
+        background-color: #fff;
+        border: 2px solid blue;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        cursor: default;
+        width: 100%;
+    }
+
+        .multi-select-button:after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0.4em 0.4em 0 0.4em;
+            border-color: #999 transparent transparent transparent;
+            vertical-align: 0.1em;
+            margin-top: 2%;
+            float: right;
+        }
+
+    .multi-select-container--open .multi-select-menu {
+        display: block;
+    }
+
+    .multi-select-container--open .multi-select-button:after {
+        border-width: 0 0.4em 0.4em 0.4em;
+        border-color: transparent transparent #999 transparent;
+    }
+
+    .multi-select-container--positioned .multi-select-menu {
+        /* Avoid border/padding on menu messing with JavaScript width calculation */
+        box-sizing: border-box;
+    }
+
+        .multi-select-container--positioned .multi-select-menu label {
+            /* Allow labels to line wrap when menu is artificially narrowed */
+            white-space: normal;
+        }
+
+    .aspectfooter {
+        width: 480px;
+        height: 100px;
+    }
+
+    .aspectheader {
+        width: 338px;
+        height: 190px;
+    }
+
+    .arrow-left {
+        height: 0;
+        margin-left: 100%;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        margin-top: -5%;
+        border-right: 10px solid black;
+    }
+</style>
+<style>
+    :root {
+  --gutter: 20px;
+}
+
+.app {
+  padding: var(--gutter) 0;
+  display: grid;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: start;
+}
+
+.app > * {
+  grid-column: 2 / -2;
+}
+
+.app > .full {
+  grid-column: 1 / -1;
+}
+
+.hs {
+  display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: 10px repeat(6, calc(52% - var(--gutter) * 2)) 10px;
+  grid-template-rows: minmax(150px, 1fr);
+  
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.5 * var(--gutter));
+}
+
+.hs:before,
+.hs:after {
+  content: '';
+}
+
+/* Hide scrollbar */
+.hide-scroll {
+  overflow-y: hidden;
+  margin-bottom: calc(-.1 * var(--gutter));
+
+}
+
+
+/* Demo styles */
+
+html,
+/*body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  
+}*/
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.app {
+  width: 375px;
+  height: 667px;
+  background: #DBD0BC;
+  overflow-y: scroll;
+}
+
+.hs > li,
+.item {
+  scroll-snap-align: center;
+  padding: calc(var(--gutter) / 2 * 1.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*background: #fff;*/
+  border-radius: 8px;
+}
+
+</style>
+
+
+<div class="container-fluid pl-0 pr-0 body-header">
+    <p class="text-center font-weight-bold mb-0 pt-3 text-light" style="font-family: Titillium Web,sans-serif;">NOMINATE</p>
+</div>
+
+<!--<!--<hr style="border-bottom: 1px solid;width:38%;" />-->
+<div class="container-fluid pl-0 pr-0 body-banner">
+    <img src="../../img/BANNER.png" class="artist-banner aspect" alt="">
+</div>
+<div class="container">
+    <p class="h1 text-center font-weight-bold color-ceek get-your-vr__header get-your-vr__header1"><b>Nominate your favourite artist</b></p>
+    <!--<p class="text-center font-weight-normal mb-4 pl-md-5 pr-md-5 txt-normal css">
+        <b>
+            Get ready to vote, check out the nominations and help your favorite artists win prizes and the people's choice award.<br /> The people have spoken!!!
+
+        </b>
+    </p>-->
+    <!--<div class="error2" style="margin-left:42%;font-size:3vh;background:none;color:red;">
+        <b>{{message}}</b>
+    </div>-->
+</div>
+
+
+<div class="container con1">
+    <form id="form" name="form" novalidate>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Artist Name <span class="requiredspan">*</span></label>
+                    </div>
+
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                        <input type="text" class="transp-input input" id="fname" name="fname" ng-model="nominationmodel.fullname" maxlength="20" required />
+                        <span style="color:red" ng-show="form.fname.$touched && form.fname.$invalid || submitted&&form.fname.$error.required"><b>Name required</b></span>
+                        <span style="color:red" ng-show="form.fname.$error.pattern"><b>Please enter only alphabets</b></span>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Artist Bio <span class="requiredspan">*</span></label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                        <textarea class="tinymceTextEditor" id="desc" style="width:100%;border:solid 2px blue" name="desc" rows="8" ng-model="nominationmodel.bio"> </textarea>
+                        <span style="color:red" id="questionValid"></span>
+                       
+
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Events <span class="requiredspan">*</span></label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12" style="float:right">
+
+
+
+                        <select id="people" class="btn btn-outline-light" name="people" ng-model="event" ng-options="e.event_name for e in eventList track by e.event_name" multiple required></select>
+                        <div class="arrow-left" style="display:none;">
+                            <span id="select_val" style="width: 50%;height: auto;position: absolute;top: 33%;left: 99%;background: rgb(33, 37, 41);padding: 7px;color: white;display:none"></span>
+
+                        </div>
+
+                        <span style="color:red" ng-show="form.people.$touched && form.people.$invalid || submitted&&form.people.$error.required"><b>Events required</b></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Banner Pic <span class="requiredspan">*</span></label>
+                        <label style="font-size: 12px;">Preferred Size:1350*760 </label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                        <div class="avatar-upload modal-content artist-modal img-artist avatar-upload-marginleft5">
+                            <div class="avatar-edit">
+
+                                <input type='file' id="imageUpload" name="imageUpload" hfile-model="header.file" ng-model="headerpicpath" accept="image/*,.png, .jpg, .jpeg" required />
+                                <label for="imageUpload"></label>
+                            </div>
+                            <div class="avatar-preview">
+                                <div id="imagePreview">
+                                    <img ng-src="{{fullheaderimageurl}}" class="img-fluid aspectheader" alt="" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <span style="color:red;margin-left: 17.5%;" ng-show="form.imageUpload.$touched && form.imageUpload.$invalid || submitted&&form.imageUpload.$error.required"><b>Bannerpic required</b></span>
+
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Footer Pic <span class="requiredspan">*</span></label>
+                        <label style="font-size: 12px;">Preferred Size:1920*400 </label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                        <div class="avatar-upload1 modal-content artist-modal img-artist avatar-upload-marginleft5">
+                            <div class="avatar-edit1">
+                                <input type='file' id="imageUpload1" name="imageUpload1" sfile-model="footer" ng-model="footerpicpath" accept="image/*,.png, .jpg, .jpeg" required />
+                                <label for="imageUpload1"></label>
+                            </div>
+                            <div class="avatar-preview1">
+                                <div id="imagePreview1">
+                                    <img ng-src="{{fullfooterimageurl}}" class="aspectfooter img-fluid" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <span style="color:red" ng-show="form.imageUpload1.$touched && form.imageUpload1.$invalid || submitted&&form.imageUpload1.$error.required"><b>Footerpic required</b></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Other Pics <span class="requiredspan">*</span></label>
+                        <label style="font-size: 12px;">Preferred Size:500*500 </label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                        <div class="input-group mb-3" style="border: solid 2px #5677ee ">
+
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imageUpload3" name="imageUpload3" file-model="package.file" aria-describedby="inputGroupFileAddon01" ng-model="nominationmodel.imageurl" accept="image/*,.png, .jpg, .jpeg" multiple required>
+                                <label class="custom-file-label" for="imageUpload3">Upload Pic</label>
+                            </div>
+                        </div>
+                        <span style="color:red" ng-show="form.imageUpload3.$touched && form.imageUpload3.$invalid || submitted&&form.imageUpload3.$error.required"><b>Pic required</b></span>
+
+                    </div>
+                </div>
+                <!--display otherpics-->
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                    </div>
+                    <div class="full hide-scroll scrollcss" ng-show="showimage" style="width:60%;">
+                        <ul class="hs" id="content1">
+                            <li class="item" ng-repeat="images in model.otherPics" style="width:300px;">
+                                <a ng-show="images.imageurl" ng-click="removeImage(images.imageurl)" style="display:inline-block; float:right"><img src="img/Close.png" class="remove" id="cancel" alt="" style="width:32px;"></a>
+                                <img src="{{images.fullimageurl}}" class="artist aspect img-fluid" alt="">
+
+                            </li>
+                            
+                        </ul>
+                       
+                       </div>
+                    <button class="w3-button w3-display-left w3-black NPprev" ng-show="showphotosprev" id="left-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: left;top: 17vh;right: 47vw; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black NPnext" ng-show="showphotosnext" id="right-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: right;top: 18vh; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+
+
+                    </div>
+
+
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Video Attachments</label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+
+                        <div class="input-group" style="border: solid 2px #5677ee ">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile02" name="photo" vfile-model="myFile" aria-describedby="inputGroupFileAddon01" accept="video/*" ng-model="videopath" multiple>
+                                <label class="custom-file-label" for="inputGroupFile02">Upload Video</label>
+                            </div>
+                        </div>
+
+                        <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12" style="max-width: 25.75rem;">
+                            <h4 align="center">Or</h4>
+                        </div>
+
+                        <div class="input-group mb-3 col-lg-12 col-md-12 col-sm-12" style="border: solid 2px #5677ee;padding-left:0;padding-right:0;border: solid 2px #5677ee;">
+                            <input type="text" class="form-control" placeholder="Youtube Link" ng-model="youtube">
+                            <div style="width:16.6%" class="input-group-append">
+                                <button style="width:100%" class="btn btn-default" type="submit" ng-click="youtubeupload();">Upload</button>
+                            </div>
+                        </div>
+
+                      
+                        <span style="color:red">{{showmsg}}</span>
+                       
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                    </div>
+                    <div class="full hide-scroll scrollcss" ng-show="showvideo1" style="width:60%;">
+                        <ul class="hs" id="content">
+
+                           
+                            <li class="item" ng-repeat="videos in model.videoAttachments" style="width:300px;">
+                                <a ng-show="videos.isyoutubelink" style="display:inline-block; float:right" ng-click="removevideo(videos.id);"><img src="img/Close.png" class="remove" id="cancel" alt="" style="width:32px;"></a>
+
+                                <iframe ng-show="videos.isyoutubelink" width="270" height="170" ng-src="{{videos.fullvideourl}}" style="margin-top: 8%;"
+                                        frameborder="0" allowfullscreen></iframe>
+
+                                <a ng-show="!videos.isyoutubelink"><div style="display:inline-block; float:right"  ng-click="removevideo(videos.id);"><img src="img/Close.png" class="remove" id="cancel" alt="" style="width:32px;"></div></a>
+
+                                <video ng-show="!videos.isyoutubelink" ng-src="{{videos.fullvideourl}}" height="190" width="270" controls ></video>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <button class="w3-button w3-display-left w3-black NVprev" ng-show="showvideoprev" id="videoleft-button" style="height:9%;padding:1%; border: none;border-radius:50%;top: 18vh;right: 47vw;color: blue; position: relative;float: left;bottom: 170px; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black NVnext" ng-show="showvideonext" id="videoright-button" style="height:9%;padding:1%; border: none;top: 18vh;border-radius:50%;color: blue; position: relative;float: right; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+
+               
+                </div>
+
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+                        <label>Audio Attachments</label>
+                    </div>
+                    <div class="subscribe-news__input col-lg-10 col-md-10 col-sm-12">
+                       
+                        <div class="input-group mb-3 col-lg-12 col-md-12 col-sm-12" style="border: solid 2px #5677ee;padding-left:0;padding-right:0;border: solid 2px #5677ee;">
+                            <input type="text" class="form-control" id="note" name="note" placeholder="Audio Title" ng-model="filename" ng-click="audiotitle();">
+                            <div style="width:16%" class="input-group-append">
+
+                                <input type="file" class="custom-file-input" id="inputGroupFile03" name="photo" afile-model="audio"
+                                       aria-describedby="inputGroupFileAddon03" ng-model="audiopath" accept="audio/*" multiple />
+                                <label class="custom-file-label" for="inputGroupFile03" style="margin-left: 84%;"></label>
+                            </div>
+                        </div>
+                            <!--<div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile03" name="photo" afile-model="audio"
+                                       aria-describedby="inputGroupFileAddon03" ng-model="audiopath" accept="audio/*"  multiple/>
+                                <label class="custom-file-label" for="inputGroupFile03">Upload Audio</label>
+                            </div>-->
+                     
+                        <span style="color:red" ng-show="notemsg"><b>Audio title required</b></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subscribe-news__input col-lg-2 col-md-2 col-sm-12">
+
+                    </div>
+                    <div class="full hide-scroll scrollcss" ng-show="showaudio" style="width:60%;">
+                        <ul class="hs" id="content2">
+                            <li class="item" ng-repeat="audio in model.audioAttachments" on-finish-render="ngRepeatFinished" style="width:300px;">
+                                <a><div ng-show="audio.id" style="display:inline-block; float:right" ng-click="removeaudio(audio.id);"><img src="img/Close.png" class="remove" id="cancel" alt="" style="width:32px;"></div></a>
+
+                                <div id="{{audio.guid}}" class="audiogallery" style="opacity:0;">
+                                    <div class="items">
+
+                                        <div class="audioplayer-tobe" style="width:100%; " data-scrubbg="waves/scrubbg.png" data-scrubprog="waves/scrubprog.png" data-videoTitle="Audio Video" data-type="normal" data-sourceogg="sounds/adg3.ogg" data-source="{{audio.fullaudiourl}}">
+
+                                            <div class="meta-artist"><span class="the-artist">{{audio.filename}}</span><br /><!--<span class="the-name">Revenge</span>--><br /></div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                      
+                    <button class="w3-button w3-display-left w3-black NAprev" ng-show="showaudioprev" id="audioleft-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: left;top: 8vh;right:47vw; transition: 0.5s;cursor: pointer; width: 4%;">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black NAnext" ng-show="showaudionext" id="audioright-button" style="height:9%;padding:1%; border: none;border-radius:50%;color: blue; position: relative;float: right;top: 8vh; transition: 0.5s;cursor: pointer; width: 4%;">&#10095;</button>
+                </div>
+                <div style="background:none;color:red;margin-left:25%;font-size:3.25vh;">
+                    <b>{{message}}</b>
+                </div>
+                <div class="row">
+                    <a value="Cancel" id="cancel" ng-click="Cancel();" style="max-width: 7.5rem;cursor:pointer;margin-left: 27%;padding-left: 7px;margin-top: 1.2%;" class="btn-w-icon btn-w-icon_border-malibu btn-w-icon_long btncancel">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6" style="color:blue">Cancel</span>
+                    </a>&nbsp;
+                    <a ng-click="submitted=true;save(form);" data-toggle="modal" data-target=".modal-artist" id="create" style="cursor:pointer;margin-left:2%;max-width: 9.5rem;padding-left: 0px;margin-top: 1.2%;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                        <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;Nominate</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal fade modal-artist" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="font-family: Segoe UI,sans-serif;max-width:100%;">
+
+
+        <div class="modal-content artist-modal npopup" ng-show="shownominationPopUp" style="max-width:100%;padding: 6% 1%;width:400px;">
+            <!--<div class="row close-modal" data-dismiss="modal" style="top: -34px;">
+                <div class="col-12 pr-0 pl-0"><img src="img/Close.png" alt="" style="width:32px;"></div>
+            </div>-->
+            <h2 class="get-your-vr__header color-blue npopup1" style="margin-top:5%;margin-left: 4%;font-size: 1.5rem;width: 24rem;">{{message}}</h2>
+            <a ng-click="ok();" id="create" style="cursor:pointer;margin-left:40%;max-width: 4.5rem;margin-top: 3%;padding-left: 0px;" class="btn-w-icon btn-w-icon_blue-gradient btn-w-icon_border-malibu btn-w-icon_long">
+                <span class="btn-w-icon__text col-lg-3 col-md-6">&nbsp;OK</span>
+            </a>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
